@@ -1,0 +1,36 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log:     <http://www.w3.org/2000/10/swap/log#> .
+@prefix in:      <http://n3.w3c.org/builtin/input#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix math:    <http://www.w3.org/2000/10/swap/math#> .
+@prefix list:    <http://www.w3.org/2000/10/swap/list#> .
+
+
+{
+    ?attr
+        <https://openehr.org#C_DV_ORDINAL>
+            ( ?code ?label ?id ?min ?max "1"^^xsd:int ?rangeLabel ) .
+    ( ?nr {
+    ?value
+        list:in ( ?code ?label ?id ?min ?max "1"^^xsd:int ?rangeLabel ) .
+    ?value
+        <https://openehr.org#value>
+            ?nr .} ?nrs )  log:collectAllIn _:b1 .
+    ?nrs  math:min ?min .
+    ?nrs  math:max ?max .
+    ?obs  <https://openehr.org#attribute>
+            ?attr .
+    ?obs  <https://openehr.org#nodeId>
+            ?id .
+    ?obs  rdfs:label ?label .
+    ( <http://niche.cs.dal.ca/copd_ui.n3#> ?id )  <http://www.w3.org/2000/10/swap/string#concatenation>
+            ?code .
+    <http://niche.cs.dal.ca/copd_ui.n3#ui-int_input>
+        <http://niche.cs.dal.ca/ui_tpl.n3#output>
+            ?output .
+    
+}  =>  {
+    ?obs  <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+            ?output .} .
+            

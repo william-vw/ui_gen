@@ -1,0 +1,63 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log:     <http://www.w3.org/2000/10/swap/log#> .
+@prefix in:      <http://n3.w3c.org/builtin/input#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix math:    <http://www.w3.org/2000/10/swap/math#> .
+@prefix list:    <http://www.w3.org/2000/10/swap/list#> .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-val_quant3>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "_prefix-label_ <input type='number' id='_id_' min='_min_' max='_max_' step='_step_' property='http://hl7.org/fhir/Observation.Quantity.value' /> _suffix-label_" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-val_quant2>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "<span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.code' resource='_code_'></span>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-int_input2>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "_prefix-label_ <input type='number' id='_id_' min='_min_' max='_max_' step='_step_' property='http://hl7.org/fhir/Observation.valueInteger' /> _suffix-label_" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-val_quant1>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "<span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.system' resource='_code_'></span>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-int_input1>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "<span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='_code_'></span>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-bool_input2>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "_label_ <input type='checkbox' id='_id_' property='http://hl7.org/fhir/Observation.valueBoolean' />" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-bool_input1>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "<span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='_code_'></span>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-int_input>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='_code0_'></span>_prefix-label1_ <input type='number' id='_id1_' min='_min1_' max='_max1_' step='_step1_' property='http://hl7.org/fhir/Observation.valueInteger' /> _suffix-label1_</td></tr>" ;
+    <http://niche.cs.dal.ca/ui_tpl.n3#lvl_struct>
+        <http://niche.cs.dal.ca/copd_ui.n3#lvl_1_struct> .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-quant_input1>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "<span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='_code_'></span>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-bool_input>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='_code0_'></span>_label1_ <input type='checkbox' id='_id1_' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" ;
+    <http://niche.cs.dal.ca/ui_tpl.n3#lvl_struct>
+        <http://niche.cs.dal.ca/copd_ui.n3#lvl_1_struct> .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-quant_input>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='_code0_'></span><div property='http://hl7.org/fhir/Observation.valueQuantity'><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.system' resource='_code10_'></span><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.code' resource='_code11_'></span>_prefix-label12_ <input type='number' id='_id12_' min='_min12_' max='_max12_' step='_step12_' property='http://hl7.org/fhir/Observation.Quantity.value' /> _suffix-label12_</div></td></tr>" ;
+    <http://niche.cs.dal.ca/ui_tpl.n3#lvl_struct>
+        <http://niche.cs.dal.ca/copd_ui.n3#lvl_1_struct> .
+
+<http://niche.cs.dal.ca/copd_ui.n3#ui-val_quant>
+    <http://niche.cs.dal.ca/ui_tpl.n3#output>
+        "<div property='http://hl7.org/fhir/Observation.valueQuantity'><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.system' resource='_code0_'></span><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.code' resource='_code1_'></span>_prefix-label2_ <input type='number' id='_id2_' min='_min2_' max='_max2_' step='_step2_' property='http://hl7.org/fhir/Observation.Quantity.value' /> _suffix-label2_</div>" ;
+    <http://niche.cs.dal.ca/ui_tpl.n3#lvl_struct>
+        <http://niche.cs.dal.ca/copd_ui.n3#lvl_n_struct> .

@@ -1,0 +1,238 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log:     <http://www.w3.org/2000/10/swap/log#> .
+@prefix in:      <http://n3.w3c.org/builtin/input#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix math:    <http://www.w3.org/2000/10/swap/math#> .
+@prefix list:    <http://www.w3.org/2000/10/swap/list#> .
+
+_:b1  <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_activity_exertion'></span>Please rate your exertion level when performing activities. <input type='number' id='code_activity_exertion' min='1' max='10' step='1' property='http://hl7.org/fhir/Observation.valueInteger' /> (1-10, 1 is least, 5 is same, 10 is worst)</td></tr>" .
+
+{
+    ?req  <http://hl7.org/fhir/ObservationDefinition.permittedDataType>
+            <http://niche.cs.dal.ca/copd_ui.n3#dt_integer> .
+    ?range
+        <http://hl7.org/fhir/Range.low>
+            _:b2 .
+    _:b2  <http://hl7.org/fhir/Quantity.value>
+            ?min .
+    ?range
+        <http://hl7.org/fhir/Range.high>
+            _:b3 .
+    _:b3  <http://hl7.org/fhir/Quantity.value>
+            ?max .
+    ?range
+        rdfs:label ?rangeLabel .
+    ?req  <http://hl7.org/fhir/ObservationDefinition.permittedDataType>
+            ?range .
+    ?action
+        rdf:type <http://hl7.org/fhir/ActivityDefinition> .
+    ?action
+        <http://hl7.org/fhir/ActivityDefinition.observationResultRequirement>
+            ?req .
+    ?action
+        <http://hl7.org/fhir/ActivityDefinition.title>
+            ?label .
+    ?req  <http://hl7.org/fhir/ObservationDefinition.code>
+            ?code .
+    ( ?code ".*?#(.*)" )  <http://www.w3.org/2000/10/swap/string#scrape>
+            ?code_ln .
+    <http://niche.cs.dal.ca/copd_ui.n3#ui-int_input>
+        <http://niche.cs.dal.ca/ui_tpl.n3#output>
+            ?output .
+    ( ( "_code0_" "_prefix-label1_" "_id1_" "_min1_" "_max1_" "_step1_" "_suffix-label1_" ) "|" )  <http://www.w3.org/2000/10/swap/string#join>
+            ?regex .
+    ( ?output ?regex "%s" )  <http://www.w3.org/2000/10/swap/string#replace>
+            ?output2 .
+    ( ( ?output2 ) ( ?code ?label ?code_ln ?min ?max "1"^^xsd:int ?rangeLabel ) )  list:append ?appended .
+    ?appended
+        <http://www.w3.org/2000/10/swap/string#format>
+            ?output3 .}  =>  {
+    ?action
+        <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+            ?output3 .} .
+
+{
+    ?req  <http://hl7.org/fhir/ObservationDefinition.permittedDataType>
+            <http://niche.cs.dal.ca/copd_ui.n3#dt_boolean> .
+    ?action
+        rdf:type <http://hl7.org/fhir/ActivityDefinition> .
+    ?action
+        <http://hl7.org/fhir/ActivityDefinition.observationResultRequirement>
+            ?req .
+    ?action
+        <http://hl7.org/fhir/ActivityDefinition.title>
+            ?label .
+    ?req  <http://hl7.org/fhir/ObservationDefinition.code>
+            ?code .
+    ( ?code ".*?#(.*)" )  <http://www.w3.org/2000/10/swap/string#scrape>
+            ?code_ln .
+    <http://niche.cs.dal.ca/copd_ui.n3#ui-bool_input>
+        <http://niche.cs.dal.ca/ui_tpl.n3#output>
+            ?output .
+    ( ( "_code0_" "_label1_" "_id1_" ) "|" )  <http://www.w3.org/2000/10/swap/string#join>
+            ?regex .
+    ( ?output ?regex "%s" )  <http://www.w3.org/2000/10/swap/string#replace>
+            ?output2 .
+    ( ( ?output2 ) ( ?code ?label ?code_ln ) )  list:append ?appended .
+    ?appended
+        <http://www.w3.org/2000/10/swap/string#format>
+            ?output3 .}  =>  {
+    ?action
+        <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+            ?output3 .} .
+
+{
+    ( "10"^^xsd:int ?prec )  math:exponentiation ?divisor .
+    ( "1"^^xsd:int ?divisor )  math:quotient ?step .
+    ?range
+        <http://hl7.org/fhir/Range.low>
+            _:b4 .
+    _:b4  <http://hl7.org/fhir/Quantity.value>
+            ?min .
+    ?range
+        <http://hl7.org/fhir/Range.high>
+            _:b5 .
+    _:b5  <http://hl7.org/fhir/Quantity.value>
+            ?max .
+    ?range
+        rdfs:label ?rangeLabel .
+    ?req  <http://hl7.org/fhir/ObservationDefinition.qualifiedInterval>
+            ?interval .
+    ?interval
+        <http://hl7.org/fhir/ObservationDefinition.qualifiedInterval.range>
+            ?range .
+    ?req  <http://hl7.org/fhir/ObservationDefinition.quantitativeDetails>
+            ?quant .
+    ?quant
+        <http://hl7.org/fhir/ObservationDefinition.quantitativeDetails.unit>
+            ?unit .
+    ?unit
+        <http://hl7.org/fhir/CodeableConcept.coding>
+            ?coding .
+    ?coding
+        <http://hl7.org/fhir/Coding.system>
+            ?codeSystem .
+    ?coding
+        <http://hl7.org/fhir/Coding.code>
+            ?unitCode .
+    ?coding
+        rdfs:label ?unitLabel .
+    ?quant
+        <http://hl7.org/fhir/ObservationDefinition.quantitativeDetails.decimalPrecision>
+            ?prec .
+    ?action
+        rdf:type <http://hl7.org/fhir/ActivityDefinition> .
+    ?action
+        <http://hl7.org/fhir/ActivityDefinition.observationResultRequirement>
+            ?req .
+    ?action
+        <http://hl7.org/fhir/ActivityDefinition.title>
+            ?label .
+    ?req  <http://hl7.org/fhir/ObservationDefinition.code>
+            ?code .
+    ( ?code ".*?#(.*)" )  <http://www.w3.org/2000/10/swap/string#scrape>
+            ?code_ln .
+    <http://niche.cs.dal.ca/copd_ui.n3#ui-quant_input>
+        <http://niche.cs.dal.ca/ui_tpl.n3#output>
+            ?output .
+    ( ( "_code0_" "_code10_" "_code11_" "_prefix-label12_" "_id12_" "_min12_" "_max12_" "_step12_" "_suffix-label12_" ) "|" )  <http://www.w3.org/2000/10/swap/string#join>
+            ?regex .
+    ( ?output ?regex "%s" )  <http://www.w3.org/2000/10/swap/string#replace>
+            ?output2 .
+    ( ( ?output2 ) ( ?code ?codeSystem ?unitCode ?label ?code_ln ?min ?max ?step ?rangeLabel ) )  list:append ?appended .
+    ?appended
+        <http://www.w3.org/2000/10/swap/string#format>
+            ?output3 .}  =>  {
+    ?action
+        <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+            ?output3 .} .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_confusion_excessive_drowsiness>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_confusion'></span>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='code_confusion' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_cough_wheezing_stridor>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_cough'></span>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='code_cough' min='1' max='10' step='1' property='http://hl7.org/fhir/Observation.valueInteger' /> (1-10, 1 is least, 5 is same, 10 is worst)</td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_phlem_blood>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_phlem_blood'></span>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='code_phlem_blood' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_sleep>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_sleep'></span>Is your quality of sleep less, the same or higher than usual? <input type='number' id='code_sleep' min='1' max='5' step='1' property='http://hl7.org/fhir/Observation.valueInteger' /> (1-5, 1 is least, 3 is same, 5 is worst)</td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_use_inhaler_often>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_use_inhaler'></span>Have you used your inhaler more often than usual? <input type='checkbox' id='code_use_inhaler' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+_:b6  <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_confusion'></span>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='code_confusion' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_appetite>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_appetite'></span>Do you have less, the same or more appetite than usual? <input type='number' id='code_appetite' min='1' max='5' step='1' property='http://hl7.org/fhir/Observation.valueInteger' /> (1-5, 1 is least, 3 is same, 5 is worst)</td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_phlem_amount>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_phlem_amount'></span>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='code_phlem_amount' min='1' max='10' step='1' property='http://hl7.org/fhir/Observation.valueInteger' /> (1-10, 1 is least, 5 is same, 10 is worst)</td></tr>" .
+
+_:b7  <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_phlem_color'></span>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='code_phlem_color' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_body_temp>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_body_temp'></span><div property='http://hl7.org/fhir/Observation.valueQuantity'><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.system' resource='http://unitsofmeasure.org'></span><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.code' resource='Cel'></span>Your objectively measured body temperature. <input type='number' id='code_body_temp' min='0' max='100' step='0.1' property='http://hl7.org/fhir/Observation.Quantity.value' /> (1-100)</div></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_o2_saturation>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_o2_sat'></span><div property='http://hl7.org/fhir/Observation.valueQuantity'><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.system' resource='http://unitsofmeasure.org'></span><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.code' resource='%'></span>Your objectively measured O2 saturation. <input type='number' id='code_o2_sat' min='0' max='100' step='0.1' property='http://hl7.org/fhir/Observation.Quantity.value' /> (1-100)</div></td></tr>" .
+
+_:b8  <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_swollen_ankle'></span>Please indicate whether your ankles are swollen. <input type='checkbox' id='code_swollen_ankle' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_cyanosis>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_cyanosis'></span>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='code_cyanosis' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_respiratory_rate>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_rr'></span><div property='http://hl7.org/fhir/Observation.valueQuantity'><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.system' resource='http://unitsofmeasure.org'></span><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.code' resource='{Breaths}/min'></span>Your objectively measured respiratory rate. <input type='number' id='code_rr' min='1' max='200' step='1' property='http://hl7.org/fhir/Observation.Quantity.value' /> (1-200)</div></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_heart_rate>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_hr'></span><div property='http://hl7.org/fhir/Observation.valueQuantity'><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.system' resource='http://unitsofmeasure.org'></span><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.code' resource='{beats}/min'></span>Your objectively measured heart rate. <input type='number' id='code_hr' min='1' max='400' step='1' property='http://hl7.org/fhir/Observation.Quantity.value' /> (1-400)</div></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_chest_pain>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_chest_pain'></span>Please indicate whether you have chest pain. <input type='checkbox' id='code_chest_pain' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+_:b9  <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_phlem_amount'></span>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='code_phlem_amount' min='1' max='10' step='1' property='http://hl7.org/fhir/Observation.valueInteger' /> (1-10, 1 is least, 5 is same, 10 is worst)</td></tr>" .
+
+_:b10
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_cyanosis'></span>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='code_cyanosis' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+_:b11
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_o2_sat'></span><div property='http://hl7.org/fhir/Observation.valueQuantity'><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.system' resource='http://unitsofmeasure.org'></span><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.code' resource='%'></span>Your objectively measured O2 saturation. <input type='number' id='code_o2_sat' min='0' max='100' step='0.1' property='http://hl7.org/fhir/Observation.Quantity.value' /> (1-100)</div></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_swollen_ankles>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_swollen_ankle'></span>Please indicate whether your ankles are swollen. <input type='checkbox' id='code_swollen_ankle' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_phlem_color>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_phlem_color'></span>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='code_phlem_color' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diagnose_activity_exertion>
+    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
+        "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_activity_exertion'></span>Please rate your exertion level when performing activities. <input type='number' id='code_activity_exertion' min='1' max='10' step='1' property='http://hl7.org/fhir/Observation.valueInteger' /> (1-10, 1 is least, 5 is same, 10 is worst)</td></tr>" .
+
+<http://niche.cs.dal.ca/copd_ui.n3#diary_observations>
+    <http://niche.cs.dal.ca/ui_tpl.n3#combined>
+        ( "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_phlem_amount'></span>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='code_phlem_amount' min='1' max='10' step='1' property='http://hl7.org/fhir/Observation.valueInteger' /> (1-10, 1 is least, 5 is same, 10 is worst)</td></tr>" "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_phlem_color'></span>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='code_phlem_color' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_activity_exertion'></span>Please rate your exertion level when performing activities. <input type='number' id='code_activity_exertion' min='1' max='10' step='1' property='http://hl7.org/fhir/Observation.valueInteger' /> (1-10, 1 is least, 5 is same, 10 is worst)</td></tr>" "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_cyanosis'></span>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='code_cyanosis' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_confusion'></span>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='code_confusion' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_swollen_ankle'></span>Please indicate whether your ankles are swollen. <input type='checkbox' id='code_swollen_ankle' property='http://hl7.org/fhir/Observation.valueBoolean' /></td></tr>" "<tr><td property='http://hl7.org/fhir/DiagnosticReport.result'><span style='display: none' property='http://hl7.org/fhir/Observation.code' resource='http://niche.cs.dal.ca/copd_ui.n3#code_o2_sat'></span><div property='http://hl7.org/fhir/Observation.valueQuantity'><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.system' resource='http://unitsofmeasure.org'></span><span style='display: none' property='http://hl7.org/fhir/Observation.Quantity.code' resource='%'></span>Your objectively measured O2 saturation. <input type='number' id='code_o2_sat' min='0' max='100' step='0.1' property='http://hl7.org/fhir/Observation.Quantity.value' /> (1-100)</div></td></tr>" ) .

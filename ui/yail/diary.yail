@@ -1,0 +1,637 @@
+#|
+$JSON
+	{ "authURL": [
+		"punya.appinventor.mit.edu"
+	],
+	"YaVersion": "238",
+	"Source": "Form",
+	"Properties": {
+		"$Name": "Screen1",
+		"$Type": "Form",
+		"$Version": "27",
+		"AppName": "COPDPatientDiary",
+		"Title": "Screen1",
+		"Uuid": "0",
+		"$Components": [{
+			"$Name": "VerticalScrollArrangement1",
+			"$Type": "VerticalScrollArrangement",
+			"$Version":"1",
+			"Width":"-2",
+			"Uuid": "0aa33f50223e3bfb75b36be074ef233997160e07",
+			"$Components": [{
+				"$Name": "LinkedDataForm1",
+				"$Type": "LinkedDataForm",
+				"$Version": "3",
+				"ObjectType": "http://hl7.org/fhir/DiagnosticReport",
+				"Width": "-2",
+				"Uuid": "447ca312fdefbf1843afe96f88d868e656dd757e",
+				"$Components": [{
+	"$Name": "cough_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "c1aaf17956e028d7764e64e618db7f40a7f9169c",
+	"$Components": [ {
+		"$Name": "cough_layout",
+		"$Type": "HorizontalArrangement",
+		"$Version": "3",
+		"Width": "-2",
+		"Uuid": "ae7af1b19a3c7a10dc8c3db423f3ff51bfccf940",
+		"$Components": [ {
+			"$Name": "cough_label",
+			"$Type": "Label",
+			"$Version": "5",
+			"Width": "-1075",
+			"Text": "Is your cough, wheezing or stridor less, the same or worse than usual?",
+			"Uuid": "74053df0dbc7a20ba98cbf79c087f70c8b71ba6d"
+		}, {
+			"$Name": "cough_textbox",
+			"$Type": "TextBox",
+			"$Version": "7",
+			"Width": "50",
+			"Hint": "",
+			"NumbersOnly": "True",
+			"ObjectType": "xsd:int",
+			"PropertyURI": "http://hl7.org/fhir/valueInteger",
+			"Uuid": "15cb99677234dca1a5333c91426acaa45b2961d7"
+		}, {
+			"$Name": "cough_textbox2",
+			"$Type": "TextBox",
+			"$Version": "7",
+			"PropertyURI": "http://hl7.org/fhir/Observation.code",
+			"Text": "http://niche.cs.dal.ca/copd.n3#code_cough",
+			"Uuid": "f6df5db259c57b6e81508c7d961d36077b480039",
+			"Visible": "False"
+		} ]
+	} ]
+},
+{
+	"$Name": "phlem_amount_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "ba92527769a1028f7ce86fb348ced90ef6beb3fa",
+	"$Components": [ {
+		"$Name": "phlem_amount_layout",
+		"$Type": "HorizontalArrangement",
+		"$Version": "3",
+		"Width": "-2",
+		"Uuid": "ce3485ea52bb6b6cad686af163362110793a6bba",
+		"$Components": [ {
+			"$Name": "phlem_amount_label",
+			"$Type": "Label",
+			"$Version": "5",
+			"Width": "-1075",
+			"Text": "Is your amount of phlem, sputum or mucus, less, the same or worse than usual?",
+			"Uuid": "96b5c4f1b006cf138e836b11534f6affae032b41"
+		}, {
+			"$Name": "phlem_amount_textbox",
+			"$Type": "TextBox",
+			"$Version": "7",
+			"Width": "50",
+			"Hint": "",
+			"NumbersOnly": "True",
+			"ObjectType": "xsd:int",
+			"PropertyURI": "http://hl7.org/fhir/valueInteger",
+			"Uuid": "5da5bb00cde0bbfc4beb6258a8dba04dad26ae93"
+		}, {
+			"$Name": "phlem_amount_textbox2",
+			"$Type": "TextBox",
+			"$Version": "7",
+			"PropertyURI": "http://hl7.org/fhir/Observation.code",
+			"Text": "http://niche.cs.dal.ca/copd.n3#code_phlem_amount",
+			"Uuid": "096ecf83ea598228d967aa93784738a71357dd40",
+			"Visible": "False"
+		} ]
+	} ]
+},
+{ 
+	"$Name": "phlem_color_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "d617edff45f0541fcf2fbe01f4873b4581b3b77b",
+	"$Components": [ {
+		"$Name": "phlem_color_checkbox",
+		"$Type": "CheckBox",
+		"$Version": "2",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/valueBoolean",
+		"Text": "Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual?",
+		"Uuid": "59a8673b34a3b0b8aeaefc2ae56c964e5453ebbc"
+	}, {
+		"$Name": "phlem_color_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_phlem_color",
+		"Uuid": "42241a3b55fb031513501e630baa58e6362c51f3",
+		"Visible": "False"
+	} ]
+},
+{ 
+	"$Name": "phlem_blood_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "64feee240e68f3bb2ba554fb0b844188b27ef6e0",
+	"$Components": [ {
+		"$Name": "phlem_blood_checkbox",
+		"$Type": "CheckBox",
+		"$Version": "2",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/valueBoolean",
+		"Text": "Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks?",
+		"Uuid": "b47211216c90ff95670082f18b6e6d28897b0867"
+	}, {
+		"$Name": "phlem_blood_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_phlem_blood",
+		"Uuid": "183008847ae6df1efb1144b68447f1fd07b3139d",
+		"Visible": "False"
+	} ]
+},
+{
+	"$Name": "activity_exertion_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "915c4a378acb4b0091a289307aa24dcd14c955da",
+	"$Components": [ {
+		"$Name": "activity_exertion_layout",
+		"$Type": "HorizontalArrangement",
+		"$Version": "3",
+		"Width": "-2",
+		"Uuid": "b261480b403f7890807482b50d88468a57929a82",
+		"$Components": [ {
+			"$Name": "activity_exertion_label",
+			"$Type": "Label",
+			"$Version": "5",
+			"Width": "-1075",
+			"Text": "Please rate your exertion level when performing activities.",
+			"Uuid": "5568c77f6d0e537bd6b00609b439e40bb1c7fc3f"
+		}, {
+			"$Name": "activity_exertion_textbox",
+			"$Type": "TextBox",
+			"$Version": "7",
+			"Width": "50",
+			"Hint": "",
+			"NumbersOnly": "True",
+			"ObjectType": "xsd:int",
+			"PropertyURI": "http://hl7.org/fhir/valueInteger",
+			"Uuid": "fa04b2eb97989b31f0d4425a98089ca71c927eda"
+		}, {
+			"$Name": "activity_exertion_textbox2",
+			"$Type": "TextBox",
+			"$Version": "7",
+			"PropertyURI": "http://hl7.org/fhir/Observation.code",
+			"Text": "http://niche.cs.dal.ca/copd.n3#code_activity_exertion",
+			"Uuid": "ad4ebc3e60c7b9a4e4ceee111f1e32b2aeb57214",
+			"Visible": "False"
+		} ]
+	} ]
+},
+{ 
+	"$Name": "use_inhaler_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "31fe59defe74eefbd70e72e550cf6d3bd6b3beed",
+	"$Components": [ {
+		"$Name": "use_inhaler_checkbox",
+		"$Type": "CheckBox",
+		"$Version": "2",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/valueBoolean",
+		"Text": "Have you used your inhaler more often than usual?",
+		"Uuid": "dffe72bac00dac8713b83435837302f1ebb4b597"
+	}, {
+		"$Name": "use_inhaler_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_use_inhaler",
+		"Uuid": "096ea98adec69ae379e369ea1d42fe42aef77fb3",
+		"Visible": "False"
+	} ]
+},
+{ 
+	"$Name": "chest_pain_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "8b95554b8ccf71f591aeda6dbe28aa12b0cffa34",
+	"$Components": [ {
+		"$Name": "chest_pain_checkbox",
+		"$Type": "CheckBox",
+		"$Version": "2",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/valueBoolean",
+		"Text": "Please indicate whether you have chest pain.",
+		"Uuid": "35c9da7b0bf8721fd95b83dff4d13d7541343e06"
+	}, {
+		"$Name": "chest_pain_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_chest_pain",
+		"Uuid": "81eb4c97f676b192f697272b5a69a244ca69007d",
+		"Visible": "False"
+	} ]
+},
+{ 
+	"$Name": "cyanosis_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "62bf7c5e2cb5c6d138e3a8b59565510624335a11",
+	"$Components": [ {
+		"$Name": "cyanosis_checkbox",
+		"$Type": "CheckBox",
+		"$Version": "2",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/valueBoolean",
+		"Text": "Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails).",
+		"Uuid": "761f014c4a5573b084f02a1066269cac594ed764"
+	}, {
+		"$Name": "cyanosis_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_cyanosis",
+		"Uuid": "a9ef2a858d2543d6695918681dc17649a3b9aae6",
+		"Visible": "False"
+	} ]
+},
+{ 
+	"$Name": "confusion_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "5fadeeeb2fec78f1c960bd742e4ba88387978e23",
+	"$Components": [ {
+		"$Name": "confusion_checkbox",
+		"$Type": "CheckBox",
+		"$Version": "2",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/valueBoolean",
+		"Text": "Please indicate whether you are feeling confused or have excessive drowsiness.",
+		"Uuid": "8ab6036096a3a4f786b18c820f7fedba9ce1f5b1"
+	}, {
+		"$Name": "confusion_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_confusion",
+		"Uuid": "669de999ec415bacf874b5d220ca1e7f7eb27c3c",
+		"Visible": "False"
+	} ]
+},
+{ 
+	"$Name": "swollen_ankle_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "4ff24903dcb15baf0e80d495646498291aef358b",
+	"$Components": [ {
+		"$Name": "swollen_ankle_checkbox",
+		"$Type": "CheckBox",
+		"$Version": "2",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/valueBoolean",
+		"Text": "Please indicate whether your ankles are swollen.",
+		"Uuid": "a194f05ea9236c9f2ddf4dd3a469eb0d25e9fce5"
+	}, {
+		"$Name": "swollen_ankle_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_swollen_ankle",
+		"Uuid": "3b41e35aa210350569a3cc7064eeee04e388a4c8",
+		"Visible": "False"
+	} ]
+},
+{
+	"$Name": "rr_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "52e426fe1387f65a13a1d71b473241072f92582b",
+	"$Components": [ {
+		"$Name": "rr_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_rr",
+		"Uuid": "fd0355b0a98e0efd7ce430d87d409d79ab3fba06",
+		"Visible": "False"
+	}, {
+		"$Name": "rr_LinkedDataForm2",
+		"$Type": "LinkedDataForm",
+		"$Version": "3",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity",
+		"Uuid": "d66ae4717d15dc068bdf8812ebb9035f42634ba0",
+		"$Components": [ {
+			"$Name": "rr_layout",
+			"$Type": "HorizontalArrangement",
+			"$Version": "3",
+			"Width": "-2",
+			"Uuid": "671fbcd2c8077d2a2fc9a14dda41a1816a03e613",
+			"$Components": [ {
+				"$Name": "rr_label",
+				"$Type": "Label",
+				"$Version": "5",
+				"Width": "-1065",
+				"Text": "Your objectively measured respiratory rate.",
+				"Uuid": "45e42247e0e5552802828d0a9c233a580da84aa4"
+			}, {
+				"$Name": "rr_textbox",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"Width": "50",
+				"Hint": "",
+				"NumbersOnly": "True",
+				"ObjectType": "xsd:int",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.value",
+				"Uuid": "f855086dd2bb971697caf924945e393356af705c"
+			}, {
+				"$Name": "rr_caption",
+				"$Type": "Label",
+				"$Version": "5",
+				"Text": "breaths/min",
+				"Uuid": "98de41d70c947e1b740721e6229350bda4237cad"
+			}, {
+				"$Name": "rr_textbox3",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.system",
+				"Text": "http://unitsofmeasure.org",
+				"Uuid": "cd0d7b984d83b8cd0e0e5c2542008c21dcb89408",
+				"Visible": "False"
+			}, {
+				"$Name": "rr_textbox4",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.code",
+				"Text": "{Breaths}/min",
+				"Uuid": "1ad1d02251605b85b667141691670a8915c041a5",
+				"Visible": "False"
+			} ]
+		} ]
+	} ]
+},
+{
+	"$Name": "hr_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "6eccb14f3eeb689a61afa065be1691e5da08550f",
+	"$Components": [ {
+		"$Name": "hr_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_hr",
+		"Uuid": "cbe7eb77f950c5ee804f615302b32f3e62275fdc",
+		"Visible": "False"
+	}, {
+		"$Name": "hr_LinkedDataForm2",
+		"$Type": "LinkedDataForm",
+		"$Version": "3",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity",
+		"Uuid": "4e635f9131e88b09309b03489ca649357ba2cbcc",
+		"$Components": [ {
+			"$Name": "hr_layout",
+			"$Type": "HorizontalArrangement",
+			"$Version": "3",
+			"Width": "-2",
+			"Uuid": "5a1c3ca5fa0b823b83d22e96fa74d38764356149",
+			"$Components": [ {
+				"$Name": "hr_label",
+				"$Type": "Label",
+				"$Version": "5",
+				"Width": "-1065",
+				"Text": "Your objectively measured heart rate.",
+				"Uuid": "a50342d18fa86c4c2b63af6632cce86bf3740fb0"
+			}, {
+				"$Name": "hr_textbox",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"Width": "50",
+				"Hint": "",
+				"NumbersOnly": "True",
+				"ObjectType": "xsd:int",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.value",
+				"Uuid": "146164dc24ea4b51ee2df2bd23b7582af5c35393"
+			}, {
+				"$Name": "hr_caption",
+				"$Type": "Label",
+				"$Version": "5",
+				"Text": "beats/min",
+				"Uuid": "6a606b0d512a5ab161b97c69893b11959da7f0ff"
+			}, {
+				"$Name": "hr_textbox3",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.system",
+				"Text": "http://unitsofmeasure.org",
+				"Uuid": "2ac54402e51132ab2768bbec958230ce5a30082b",
+				"Visible": "False"
+			}, {
+				"$Name": "hr_textbox4",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.code",
+				"Text": "{beats}/min",
+				"Uuid": "7544bd27afa596810949392079e4b39cfbb140cb",
+				"Visible": "False"
+			} ]
+		} ]
+	} ]
+},
+{
+	"$Name": "o2_sat_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "0cbfd6d0673329ea30945f675b9c5660c582ddf1",
+	"$Components": [ {
+		"$Name": "o2_sat_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_o2_sat",
+		"Uuid": "51df015fd4aeafc63b002536b246f5384ec7cf03",
+		"Visible": "False"
+	}, {
+		"$Name": "o2_sat_LinkedDataForm2",
+		"$Type": "LinkedDataForm",
+		"$Version": "3",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity",
+		"Uuid": "8ca0b9f76296f14ff78b58cbd7ebddc13dfa99b9",
+		"$Components": [ {
+			"$Name": "o2_sat_layout",
+			"$Type": "HorizontalArrangement",
+			"$Version": "3",
+			"Width": "-2",
+			"Uuid": "e9b1f70ab9508f6883fa75f7953f1a89b43a1883",
+			"$Components": [ {
+				"$Name": "o2_sat_label",
+				"$Type": "Label",
+				"$Version": "5",
+				"Width": "-1065",
+				"Text": "Your objectively measured O2 saturation.",
+				"Uuid": "79eab489a830b42fba29082077cf88c07341acdc"
+			}, {
+				"$Name": "o2_sat_textbox",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"Width": "50",
+				"Hint": "",
+				"NumbersOnly": "True",
+				"ObjectType": "xsd:int",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.value",
+				"Uuid": "cef5197949f62a475020e27db04c3aef424acff5"
+			}, {
+				"$Name": "o2_sat_caption",
+				"$Type": "Label",
+				"$Version": "5",
+				"Text": "%",
+				"Uuid": "b01eaa212443bcd55e1b93643316e3361b34bb46"
+			}, {
+				"$Name": "o2_sat_textbox3",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.system",
+				"Text": "http://unitsofmeasure.org",
+				"Uuid": "5e8ab3532751f855ca1a5cbde6f87fa97489be1b",
+				"Visible": "False"
+			}, {
+				"$Name": "o2_sat_textbox4",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.code",
+				"Text": "%",
+				"Uuid": "9474488ae531960fff3120c33cd203d0f540184d",
+				"Visible": "False"
+			} ]
+		} ]
+	} ]
+},
+{
+	"$Name": "body_temp_LinkedDataForm",
+	"$Type": "LinkedDataForm",
+	"$Version": "3",
+	"Width": "-2",
+	"ObjectType": "http://hl7.org/fhir/Observation",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"Uuid": "d4f5ec90449b36f4e83b9cb741ef3dedfdf41704",
+	"$Components": [ {
+		"$Name": "body_temp_textbox2",
+		"$Type": "TextBox",
+		"$Version": "7",
+		"PropertyURI": "http://hl7.org/fhir/Observation.code",
+		"Text": "http://niche.cs.dal.ca/copd.n3#code_body_temp",
+		"Uuid": "e58c8baafd6f1f02266c820cc7bf66188d53e6f0",
+		"Visible": "False"
+	}, {
+		"$Name": "body_temp_LinkedDataForm2",
+		"$Type": "LinkedDataForm",
+		"$Version": "3",
+		"Width": "-2",
+		"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity",
+		"Uuid": "06fc35076ee601417c82e22042e5a56e612d2866",
+		"$Components": [ {
+			"$Name": "body_temp_layout",
+			"$Type": "HorizontalArrangement",
+			"$Version": "3",
+			"Width": "-2",
+			"Uuid": "60098e72babbd2330d0217c508a6c8e60461537a",
+			"$Components": [ {
+				"$Name": "body_temp_label",
+				"$Type": "Label",
+				"$Version": "5",
+				"Width": "-1065",
+				"Text": "Your objectively measured body temperature.",
+				"Uuid": "b442df5d6d6fa07de24c982795b2788e2694b074"
+			}, {
+				"$Name": "body_temp_textbox",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"Width": "50",
+				"Hint": "",
+				"NumbersOnly": "True",
+				"ObjectType": "xsd:int",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.value",
+				"Uuid": "e623134514f72a4f4575b6eccd0c9a92e742370f"
+			}, {
+				"$Name": "body_temp_caption",
+				"$Type": "Label",
+				"$Version": "5",
+				"Text": "C",
+				"Uuid": "93fbeb119f6fe41d9613a5ca620243036fce481a"
+			}, {
+				"$Name": "body_temp_textbox3",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.system",
+				"Text": "http://unitsofmeasure.org",
+				"Uuid": "a37d6b8277b28a43daebfd698a9584baaee64202",
+				"Visible": "False"
+			}, {
+				"$Name": "body_temp_textbox4",
+				"$Type": "TextBox",
+				"$Version": "7",
+				"PropertyURI": "http://hl7.org/fhir/Observation.valueQuantity.code",
+				"Text": "Cel",
+				"Uuid": "6ba1a48f56a6ea3bc50e6d01bafb2c3e501fbd96",
+				"Visible": "False"
+			} ]
+		} ]
+	} ]
+}] },
+{
+	"$Name": "Button1",
+	"$Type": "Button",
+	"$Version": "6",
+	"Text": "submit",
+	"Uuid": "e06c742d6917033bf1083dc36a82a81ffed62bd4"
+} ] },
+{
+	"$Name": "LinkedData1",
+	"$Type": "LinkedData",
+	"$Version": "3",
+	"Uuid": "371c24504b9243638ce674785f83152cb273552a"
+} ] } }
+|#

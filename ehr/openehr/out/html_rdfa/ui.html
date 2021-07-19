@@ -1,0 +1,130 @@
+<form action="" method="POST" onsubmit="processDiary(); return false">
+	<table>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						Is your cough, wheezing or stridor less, the same or worse than
+						usual? <input type='number' id='at9' min='0' max='10' step='1'
+							property='https://openehr.org#dv_ordinal' /> (0 - 10)
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						Is your amount of phlem, sputum or mucus, less, the same or worse
+						than usual? <input type='number' id='at27' min='0' max='10'
+							step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						Is the color of phlem, sputum or mucus green, yellow or
+						rust-colored, and is this different from usual? <input
+							type='checkbox' id='at45'
+							property='https://openehr.org#dv_boolean' />
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						Is there significant blood in the phlem, sputum or mucus, beyond
+						flecks or streaks? <input type='checkbox' id='at53'
+							property='https://openehr.org#dv_boolean' />
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						Please indicate whether you have cyanosis (blue/grey coloration
+						around lips, fingernails). <input type='checkbox' id='at95'
+							property='https://openehr.org#dv_boolean' />
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						Please indicate whether you are feeling confused or have excessive
+						drowsiness. <input type='checkbox' id='at103'
+							property='https://openehr.org#dv_boolean' />
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						Please indicate whether your ankles are swollen. <input
+							type='checkbox' id='at111'
+							property='https://openehr.org#dv_boolean' />
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						Your level of activity as recorded by your smartwatch throughout
+						the day. <input type='number' id='at200' min='' max='' step='1'
+							property='https://openehr.org#dv_ordinal' />
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						<span style='display: none' property='https://openehr.org#units'
+							resource='%'></span>SpO₂ <input type='number' id='at208'
+							min='0.0' max='100.0' step='0.1'
+							property='https://openehr.org#magnitude' /> (0.0 - 100.0)
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td property='https://openehr.org#content'><span
+				style='display: none' property='https://openehr.org#nodeId'
+				resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span>
+			<div property='https://openehr.org#events'>
+					<div property='https://openehr.org#value'>
+						<span style='display: none' property='https://openehr.org#units'
+							resource='Cel'></span>Temperature <input type='number' id='at232'
+							min='0.0' max='100.0' step='0.1'
+							property='https://openehr.org#magnitude' /> (0.0 - 100.0)
+					</div>
+				</div></td>
+		</tr>
+		<tr>
+			<td><input type='submit' value='submit'></input></td>
+		</tr>
+	</table>
+</form>
