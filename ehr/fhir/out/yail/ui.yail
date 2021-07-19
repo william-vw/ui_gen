@@ -15,6 +15,28 @@ $JSON
 		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
 		"$Components": [ {
 	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "http://hl7.org/fhir/Observation.code", "Text": "http://niche.cs.dal.ca/copd_ui.n3#code_cough"
+}, {
+	"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+	"$Components": [ {
+		"$Name": "label1", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "Is your cough, wheezing or stridor less, the same or worse than usual?"
+	}, {
+		"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Width": "50", "Hint": "", "NumbersOnly": "True", 
+		"ObjectType": "xsd:numeric", "PropertyURI": "http://hl7.org/fhir/Observation.valueInteger" 
+	}, {
+		"$Name": "label2", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "code_cough"
+	} ]
+} ]
+	} ]
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
 	"PropertyURI": "http://hl7.org/fhir/Observation.code", "Text": "http://niche.cs.dal.ca/copd_ui.n3#code_phlem_amount"
 }, {
 	"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
@@ -210,6 +232,28 @@ $JSON
 		"Text": "code_hr"
 	} ]
 } ]
+	} ]
+} ]
+	} ]
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "http://hl7.org/fhir/DiagnosticReport.result",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "http://hl7.org/fhir/Observation.code", "Text": "http://niche.cs.dal.ca/copd_ui.n3#code_activity_level"
+}, {
+	"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+	"$Components": [ {
+		"$Name": "label1", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "Your level of activity as recorded by your smartwatch throughout the day."
+	}, {
+		"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Width": "50", "Hint": "", "NumbersOnly": "True", 
+		"ObjectType": "xsd:numeric", "PropertyURI": "http://hl7.org/fhir/Observation.valueInteger" 
+	}, {
+		"$Name": "label2", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "code_activity_level"
 	} ]
 } ]
 	} ]

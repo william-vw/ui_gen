@@ -340,7 +340,12 @@
 	fhir:ActivityDefinition.observationResultRequirement [
 		fhir:ObservationDefinition.code :code_activity_level ;
 		fhir:ObservationDefinition.category :category_activity , :category_sensor_data ;
-		fhir:ObservationDefinition.permittedDataType :dt_integer
+		fhir:ObservationDefinition.permittedDataType :dt_integer , 
+			[ a fhir:Range ;
+				fhir:Range.low  [ fhir:Quantity.value "" ] ;
+				fhir:Range.high [ fhir:Quantity.value "" ] ;
+				rdfs:label "" 
+			]
 	] .
 	
 :diagnose_chest_pain a fhir:ActivityDefinition ;

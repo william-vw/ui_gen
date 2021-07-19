@@ -141,6 +141,96 @@ $JSON
 		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
 		"$Components": [ {
 	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "https://openehr.org#nodeId", "Text": "http://niche.cs.dal.ca/copd_ui.n3#at61"
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#events",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#value",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+	"$Components": [ {
+		"$Name": "label1", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "Please rate your exertion level when performing activities."
+	}, {
+		"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Width": "50", "Hint": "", "NumbersOnly": "True", 
+		"ObjectType": "xsd:numeric", "PropertyURI": "https://openehr.org#dv_ordinal" 
+	}, {
+		"$Name": "label2", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "at61"
+	} ]
+} ]
+	} ]
+} ]
+	} ]
+} ]
+	} ]
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#content",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "https://openehr.org#nodeId", "Text": "http://niche.cs.dal.ca/copd_ui.n3#at79"
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#events",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#value",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "checkbox", "$Type": "CheckBox", "$Version": "2", "Width": "-2", 
+	"PropertyURI": "https://openehr.org#dv_boolean", "Text": "Have you used your inhaler more often than usual?"
+} ]
+	} ]
+} ]
+	} ]
+} ]
+	} ]
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#content",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "https://openehr.org#nodeId", "Text": "http://niche.cs.dal.ca/copd_ui.n3#at87"
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#events",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#value",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "checkbox", "$Type": "CheckBox", "$Version": "2", "Width": "-2", 
+	"PropertyURI": "https://openehr.org#dv_boolean", "Text": "Please indicate whether you have chest pain."
+} ]
+	} ]
+} ]
+	} ]
+} ]
+	} ]
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#content",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
 	"PropertyURI": "https://openehr.org#nodeId", "Text": "http://niche.cs.dal.ca/copd_ui.n3#at95"
 }, {
 	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
@@ -209,6 +299,84 @@ $JSON
 		"$Components": [ {
 	"$Name": "checkbox", "$Type": "CheckBox", "$Version": "2", "Width": "-2", 
 	"PropertyURI": "https://openehr.org#dv_boolean", "Text": "Please indicate whether your ankles are swollen."
+} ]
+	} ]
+} ]
+	} ]
+} ]
+	} ]
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#content",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "https://openehr.org#nodeId", "Text": "http://niche.cs.dal.ca/copd_ui.n3#at120"
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#events",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#value",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "https://openehr.org#units", "Text": "/min"
+}, {
+	"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+	"$Components": [ {
+		"$Name": "label1", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "Respiration rate"
+	}, {
+		"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Width": "50", "Hint": "", "NumbersOnly": "True", 
+		"ObjectType": "xsd:numeric", "PropertyURI": "https://openehr.org#magnitude" 
+	}, {
+		"$Name": "label2", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "at120"
+	} ]
+} ]
+	} ]
+} ]
+	} ]
+} ]
+	} ]
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#content",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "https://openehr.org#nodeId", "Text": "http://niche.cs.dal.ca/copd_ui.n3#at151"
+}, {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#events",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "linkedDataForm", "$Type": "LinkedDataForm", "$Version": "3", "Width": "-2",
+	"PropertyURI": "https://openehr.org#value",
+	"$Components": [ {
+		"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+		"$Components": [ {
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "https://openehr.org#units", "Text": "/min"
+}, {
+	"$Name": "layout", "$Type": "HorizontalArrangement", "$Version": "3", "Width": "-2",
+	"$Components": [ {
+		"$Name": "label1", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "Pulse rate"
+	}, {
+		"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Width": "50", "Hint": "", "NumbersOnly": "True", 
+		"ObjectType": "xsd:numeric", "PropertyURI": "https://openehr.org#magnitude" 
+	}, {
+		"$Name": "label2", "$Type": "Label", "$Version": "5", "Width": "-1075",
+		"Text": "at151"
+	} ]
 } ]
 	} ]
 } ]

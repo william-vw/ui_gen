@@ -11,11 +11,23 @@
 @base <http://niche.cs.dal.ca/copd_ui.n3> .
 
 
-# METHOD 1
-
-{	?el a tpl:UiElement ; tpl:hidden true ; ?property ?z .
+{	?el a tpl:UiElement ; tpl:hidden true ; tpl:inputType xsd:anyURI ; 
+		?property ?z .
 	
-	:code_input rdf:value ?code .
+	:hidden_uri_input rdf:value ?code .
+	
+	_:x tpl:domainNamespace ?ns^log:uri .
+	?property!log:uri string:startsWith ?ns .
+
+	( ?code "_property_" ?property ) string:replace ?output
+
+} => {	?el tpl:output ?output } .
+
+
+{	?el a tpl:UiElement ; tpl:hidden true ; tpl:inputType xsd:string ; 
+		?property ?z .
+	
+	:hidden_str_input rdf:value ?code .
 	
 	_:x tpl:domainNamespace ?ns^log:uri .
 	?property!log:uri string:startsWith ?ns .

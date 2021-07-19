@@ -5,7 +5,8 @@
 @base <http://niche.cs.dal.ca/copd_ui.n3> .
 
 
-:code_input rdf:value """<span style='display: none' property='_property_' resource='_code_'></span>""" .
+:hidden_uri_input rdf:value """<span style='display: none' property='_property_' resource='_code_'></span>""" .
+:hidden_str_input rdf:value """<span style='display: none' property='_property_'>_code_</span>""" .
 :numeric_input rdf:value """_prefix-label_ <input type='number' id='_id_' min='_min_' max='_max_' step='_step_' property='_property_' /> _suffix-label_""" .
 :bool_input rdf:value """_label_ <input type='checkbox' id='_id_' property='_property_' />""".
 

@@ -8,20 +8,9 @@
 
 {
     ?attr
-        <https://openehr.org#C_DV_ORDINAL>
-            ?ordinalValues .
-    ( ?ordinalNr {
-    ?ordinalValue
-        list:in ?ordinalValues .
-    ?ordinalValue
-        <https://openehr.org#value>
-            ?ordinalNr .} ?ordinalNrs )  log:collectAllIn _:b1 .
-    ?ordinalNrs
-        math:min ?min .
-    ?ordinalNrs
-        math:max ?max .
-    ( "(" ?min " - " ?max ")" )  <http://www.w3.org/2000/10/swap/string#concatenation>
-            ?rangeLabel .
+        <https://openehr.org#object>
+            ?obj .
+    ?obj  rdf:type <https://openehr.org#C_DV_BOOLEAN> .
     ?obs  <https://openehr.org#attribute>
             ?attr .
     ?obs  <https://openehr.org#nodeId>
@@ -29,14 +18,14 @@
     ?obs  rdfs:label ?label .
     ( <http://niche.cs.dal.ca/copd_ui.n3#> ?id )  <http://www.w3.org/2000/10/swap/string#concatenation>
             ?code .
-    <http://niche.cs.dal.ca/copd_ui.n3#ui-int_input>
+    <http://niche.cs.dal.ca/copd_ui.n3#ui-bool_input>
         <http://niche.cs.dal.ca/ui_tpl.n3#output>
             ?output .
-    ( ( "_code0_" "_prefix-label100_" "_id100_" "_min100_" "_max100_" "_step100_" "_suffix-label100_" ) "|" )  <http://www.w3.org/2000/10/swap/string#join>
+    ( ( "_code0_" "_label100_" "_id100_" ) "|" )  <http://www.w3.org/2000/10/swap/string#join>
             ?regex .
     ( ?output ?regex "%s" )  <http://www.w3.org/2000/10/swap/string#replace>
             ?output2 .
-    ( ( ?output2 ) ( ?code ?label ?id ?min ?max "1"^^xsd:int ?rangeLabel ) )  list:append ?appended .
+    ( ( ?output2 ) ( ?code ?label ?id ) )  list:append ?appended .
     ?appended
         <http://www.w3.org/2000/10/swap/string#format>
             ?output3 .}  =>  {
@@ -71,9 +60,20 @@
 
 {
     ?attr
-        <https://openehr.org#object>
-            ?obj .
-    ?obj  rdf:type <https://openehr.org#C_DV_BOOLEAN> .
+        <https://openehr.org#C_DV_ORDINAL>
+            ?ordinalValues .
+    ( ?ordinalNr {
+    ?ordinalValue
+        list:in ?ordinalValues .
+    ?ordinalValue
+        <https://openehr.org#value>
+            ?ordinalNr .} ?ordinalNrs )  log:collectAllIn _:b1 .
+    ?ordinalNrs
+        math:min ?min .
+    ?ordinalNrs
+        math:max ?max .
+    ( "(" ?min " - " ?max ")" )  <http://www.w3.org/2000/10/swap/string#concatenation>
+            ?rangeLabel .
     ?obs  <https://openehr.org#attribute>
             ?attr .
     ?obs  <https://openehr.org#nodeId>
@@ -81,14 +81,14 @@
     ?obs  rdfs:label ?label .
     ( <http://niche.cs.dal.ca/copd_ui.n3#> ?id )  <http://www.w3.org/2000/10/swap/string#concatenation>
             ?code .
-    <http://niche.cs.dal.ca/copd_ui.n3#ui-bool_input>
+    <http://niche.cs.dal.ca/copd_ui.n3#ui-int_input>
         <http://niche.cs.dal.ca/ui_tpl.n3#output>
             ?output .
-    ( ( "_code0_" "_label100_" "_id100_" ) "|" )  <http://www.w3.org/2000/10/swap/string#join>
+    ( ( "_code0_" "_prefix-label100_" "_id100_" "_min100_" "_max100_" "_step100_" "_suffix-label100_" ) "|" )  <http://www.w3.org/2000/10/swap/string#join>
             ?regex .
     ( ?output ?regex "%s" )  <http://www.w3.org/2000/10/swap/string#replace>
             ?output2 .
-    ( ( ?output2 ) ( ?code ?label ?id ) )  list:append ?appended .
+    ( ( ?output2 ) ( ?code ?label ?id ?min ?max "1"^^xsd:int ?rangeLabel ) )  list:append ?appended .
     ?appended
         <http://www.w3.org/2000/10/swap/string#format>
             ?output3 .}  =>  {
@@ -143,137 +143,9 @@
     ?obs  <http://niche.cs.dal.ca/ui_tpl.n3#generated>
             ?output3 .} .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at99.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at228.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at44>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at110.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at43.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at231>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at198>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at110>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at207.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at93.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at107.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at23.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='at27' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at95>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
         "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at26.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='at27' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at230>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at197>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at91.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at43>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at49.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at0.content>
-    <http://niche.cs.dal.ca/ui_tpl.n3#combined>
-        ( "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='at27' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" ) .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at100.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at50>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at102.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at196>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at120>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at120'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='/min'></span>Rate <input type='number' id='at120' min='0.0' max='200.0' step='1' property='https://openehr.org#magnitude' /> (0.0 - 200.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at51.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at41.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at205.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at9>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at230.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at94.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at5.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at109.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at61>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
@@ -283,153 +155,25 @@
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
         "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at200>
+<http://niche.cs.dal.ca/ui_copd.n3#at120>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" .
+        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at120'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units'>/min</span>Respiration rate <input type='number' id='at120' min='0.0' max='200.0' step='1' property='https://openehr.org#magnitude' /> (0.0 - 200.0)</div></div></td></tr>" .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at103>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at208>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at8>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at229.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at92>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at52>
+<http://niche.cs.dal.ca/ui_copd.n3#at53>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
         "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at49>
+<http://niche.cs.dal.ca/ui_copd.n3#at151>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at102>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at204.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at25>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='at27' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at7>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at197.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at207>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at42.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at24.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='at27' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at91>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at44.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at51>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at25.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='at27' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at99>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at23>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='at27' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
+        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at151'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units'>/min</span>Pulse rate <input type='number' id='at151' min='0.0' max='1000.0' step='1' property='https://openehr.org#magnitude' /> (0.0 - 1000.0)</div></div></td></tr>" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at87>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
         "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at87'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have chest pain. <input type='checkbox' id='at87' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at101>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at24>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='at27' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at6>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at196.data>
+<http://niche.cs.dal.ca/ui_copd.n3#at200>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
         "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at109>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at206>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at206.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at8.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at108.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at92.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at94>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at101.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at42>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at6.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at27>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
@@ -439,90 +183,22 @@
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
         "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at79'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Have you used your inhaler more often than usual? <input type='checkbox' id='at79' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at100>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at205>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at5>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at231.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at229>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at108>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at199.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at7.data>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at41>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at45'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is the color of phlem, sputum or mucus green, yellow or rust-colored, and is this different from usual? <input type='checkbox' id='at45' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at93>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at95'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you have cyanosis (blue/grey coloration around lips, fingernails). <input type='checkbox' id='at95' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at53>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at151>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at151'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='/min'></span>Rate <input type='number' id='at151' min='0.0' max='1000.0' step='1' property='https://openehr.org#magnitude' /> (0.0 - 1000.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at26>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at27'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your amount of phlem, sputum or mucus, less, the same or worse than usual? <input type='number' id='at27' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at232>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at199>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" .
+        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units'>Cel</span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at111>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
         "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at198.data>
+<http://niche.cs.dal.ca/ui_copd.n3#at103>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at200'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Your level of activity as recorded by your smartwatch throughout the day. <input type='number' id='at200' min='' max='' step='1' property='https://openehr.org#dv_ordinal' /> </div></div></td></tr>" .
+        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at103'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether you are feeling confused or have excessive drowsiness. <input type='checkbox' id='at103' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at204>
+<http://niche.cs.dal.ca/ui_copd.n3#at208>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='%'></span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
+        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at208'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units'>%</span>SpO₂ <input type='number' id='at208' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at107>
+<http://niche.cs.dal.ca/ui_copd.n3#at9>
     <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at111'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Please indicate whether your ankles are swollen. <input type='checkbox' id='at111' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at50.events>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at228>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at232'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'><span style='display: none' property='https://openehr.org#units' resource='Cel'></span>Temperature <input type='number' id='at232' min='0.0' max='100.0' step='0.1' property='https://openehr.org#magnitude' /> (0.0 - 100.0)</div></div></td></tr>" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at52.items>
-    <http://niche.cs.dal.ca/ui_tpl.n3#generated>
-        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at53'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is there significant blood in the phlem, sputum or mucus, beyond flecks or streaks? <input type='checkbox' id='at53' property='https://openehr.org#dv_boolean' /></div></div></td></tr>" .
+        "<tr><td property='https://openehr.org#content'><span style='display: none' property='https://openehr.org#nodeId' resource='http://niche.cs.dal.ca/copd_ui.n3#at9'></span><div property='https://openehr.org#events'><div property='https://openehr.org#value'>Is your cough, wheezing or stridor less, the same or worse than usual? <input type='number' id='at9' min='0' max='10' step='1' property='https://openehr.org#dv_ordinal' /> (0 - 10)</div></div></td></tr>" .

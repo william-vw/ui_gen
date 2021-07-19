@@ -4,7 +4,12 @@
 @base <http://niche.cs.dal.ca/copd_ui.n3> .
 
 
-:code_input rdf:value """{
+:hidden_uri_input rdf:value """{
+	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
+	"PropertyURI": "_property_", "Text": "_code_"
+}""" .
+
+:hidden_str_input rdf:value """{
 	"$Name": "textbox", "$Type": "TextBox", "$Version": "7", "Visible": "False", 
 	"PropertyURI": "_property_", "Text": "_code_"
 }""" .

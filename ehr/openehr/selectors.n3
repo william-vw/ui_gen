@@ -10,6 +10,7 @@
 @prefix : <http://niche.cs.dal.ca/copd_ui.n3#> .
 @base <http://niche.cs.dal.ca/copd_ui.n3> .
 
+
 :select-observation_id a tpl:Selector ;
 	rdf:value {
 #		?arch a oe:Archetype ; oe:definition ?def .

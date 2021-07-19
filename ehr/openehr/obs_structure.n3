@@ -23,7 +23,7 @@ _:b0 a tpl:UiElement ; tpl:level 0 ;
 	tpl:inProperty oe:content ;
 	tpl:elements ( :ui-int_input1 :ui-event_int ) .
 
-:ui-int_input1 a tpl:UiElement ; tpl:hidden true ; 
+:ui-int_input1 a tpl:UiElement ; tpl:hidden true ; tpl:inputType xsd:anyURI ;
 	oe:nodeId :id .
 
 :ui-event_int a tpl:UiElement ; tpl:structure true ; tpl:level 2 ;
@@ -42,7 +42,7 @@ _:b0 a tpl:UiElement ; tpl:level 0 ;
 	tpl:inProperty oe:content ;
 	tpl:elements ( :ui-bool_input1 :ui-event_bool ) .
 
-:ui-bool_input1 a tpl:UiElement ; tpl:hidden true ; 
+:ui-bool_input1 a tpl:UiElement ; tpl:hidden true ; tpl:inputType xsd:anyURI ;
 	oe:nodeId :id .
 
 :ui-event_bool a tpl:UiElement ; tpl:structure true ; tpl:level 2 ;
@@ -61,7 +61,7 @@ _:b0 a tpl:UiElement ; tpl:level 0 ;
 	tpl:inProperty oe:content ;
 	tpl:elements ( :ui-quant_input1 :ui-event_quant ) .
 	
-:ui-quant_input1 a tpl:UiElement ; tpl:hidden true ;
+:ui-quant_input1 a tpl:UiElement ; tpl:hidden true ; tpl:inputType xsd:anyURI ;
 	oe:nodeId :id .
 
 :ui-event_quant a tpl:UiElement ; tpl:structure true ; tpl:level 2 ;
@@ -72,22 +72,7 @@ _:b0 a tpl:UiElement ; tpl:level 0 ;
 	tpl:inProperty oe:value ;
 	tpl:elements ( :ui-val_quant1 :ui-val_quant2 ) .
 
-# TODO support inputType URI vs. string
-# openEHR represents units as strings, fhir as URIs
-
-:ui-val_quant1 a tpl:UiElement ; tpl:hidden true ; 
+:ui-val_quant1 a tpl:UiElement ; tpl:hidden true ; tpl:inputType xsd:string ;
 	oe:units :s .
 :ui-val_quant2 a tpl:UiElement ; tpl:inputType xsd:numeric ; 
 	oe:magnitude :v .
-
-
-# METHOD 3
-
-#:x oe:content _:b0 , _:b1 , _:b2 .
-# ..
-#_:b2 oe:nodeId :id ; {| tpl:hidden true ; tpl:order 0 |}
-#	oe:events [
-#		oe:value [
-#			oe:units :s . {| tpl:hidden true ; tpl:order 0 |}
-#			oe:magnitude :v . {| tpl:inputType xsd:integer ; tpl:order 1 |}
-#	] . {| tpl:order 1 |}

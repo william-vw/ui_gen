@@ -6,11 +6,20 @@
 @prefix math:    <http://www.w3.org/2000/10/swap/math#> .
 @prefix list:    <http://www.w3.org/2000/10/swap/list#> .
 
+_:b1  <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
 <http://niche.cs.dal.ca/ui_copd.n3#at76.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b1 ;
+        _:b2 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at77> .
 
@@ -20,18 +29,18 @@
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at100> .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at118.items>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#cardinality>
-        _:b2 ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at120> .
-
 _:b3  <https://openehr.org#symbol>
         _:b4 ;
     <https://openehr.org#value>
         "8"^^xsd:int .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at118.items>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#cardinality>
+        _:b5 ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at120> .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at44>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -42,9 +51,6 @@ _:b3  <https://openehr.org#symbol>
         <http://niche.cs.dal.ca/ui_copd.n3#at44.items> ;
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
-
-_:b5  <terminology_id> "local" ;
-    <code_string> "at72" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at56>
     rdfs:label "Extension"@en .
@@ -57,19 +63,19 @@ _:b5  <terminology_id> "local" ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at111> .
 
-_:b7  <https://openehr.org#symbol>
-        _:b8 ;
-    <https://openehr.org#value>
-        "0"^^xsd:int .
+_:b7  <terminology_id> "local" ;
+    <code_string> "at35" .
 
-_:b9  <https://openehr.org#lower>
-        "0"^^xsd:int ;
+_:b8  <https://openehr.org#lower>
+        "1"^^xsd:int ;
     <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
+        "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
     <https://openehr.org#upper>
-        "1"^^xsd:int .
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at3>
     rdfs:label "Status"@en .
@@ -82,7 +88,11 @@ _:b9  <https://openehr.org#lower>
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at146.data> ;
     <https://openehr.org#occurrences>
-        _:b10 .
+        _:b9 .
+
+_:b10
+    <terminology_id> "local" ;
+    <code_string> "at31" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at110>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -121,14 +131,30 @@ _:b9  <https://openehr.org#lower>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#C_DV_ORDINAL>
-        ( _:b7 _:b12 _:b13 _:b14 _:b15 _:b16 _:b17 _:b18 _:b19 _:b20 _:b21 ) .
+        ( _:b12 _:b13 _:b14 _:b15 _:b16 _:b17 _:b18 _:b19 _:b20 _:b21 _:b22 ) .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at158>
     rdfs:label "List"@en .
 
-_:b22
-    <terminology_id> "local" ;
-    <code_string> "at70" .
+_:b21
+    <https://openehr.org#symbol>
+        _:b23 ;
+    <https://openehr.org#value>
+        "9"^^xsd:int .
+
+_:b24
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#list>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#ordered>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at93.data>
     <https://openehr.org#existence>
@@ -136,8 +162,35 @@ _:b22
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at94> .
 
-_:b23
-    <https://openehr.org#lower>
+<http://niche.cs.dal.ca/ui_copd.n3#at116.events>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#cardinality>
+        _:b25 ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at117> .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at107.data>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at108> .
+
+_:b26
+    <https://openehr.org#symbol>
+        _:b27 ;
+    <https://openehr.org#value>
+        "7"^^xsd:int .
+
+_:b28
+    <terminology_id> "local" ;
+    <code_string> "at65" .
+
+_:b29
+    <terminology_id> "local" ;
+    <code_string> "at14" .
+
+_:b5  <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
@@ -148,51 +201,35 @@ _:b23
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at116.events>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#cardinality>
-        _:b24 ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at117> .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at107.data>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at108> .
-
-_:b25
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
-_:b26
-    <https://openehr.org#symbol>
-        _:b27 ;
-    <https://openehr.org#value>
-        "7"^^xsd:int .
-
-_:b28
-    <https://openehr.org#lower>
+_:b30
+    <https://openehr.org#units>
+        "Cel" ;
+    <https://openehr.org#precision>
         "1"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
+    <https://openehr.org#magnitude>
+        _:b31 .
+
+_:b22
+    <https://openehr.org#symbol>
+        _:b32 ;
+    <https://openehr.org#value>
+        "10"^^xsd:int .
+
+_:b33
+    <terminology_id> "local" ;
+    <code_string> "at74" .
+
+_:b34
+    <https://openehr.org#symbol>
+        _:b35 ;
+    <https://openehr.org#value>
+        "8"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at26.items>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b29 ;
+        _:b36 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at27> .
 
@@ -207,26 +244,15 @@ _:b28
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at230.data> ;
     <https://openehr.org#occurrences>
-        _:b30 .
+        _:b37 .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at43>
-    a   <https://openehr.org#POINT_EVENT> ;
-    rdfs:label "Point in time"@en ;
-    <https://openehr.org#nodeId>
-        "at43" ;
-    <https://openehr.org#attribute>
-        <http://niche.cs.dal.ca/ui_copd.n3#at43.data> ;
-    <https://openehr.org#occurrences>
-        _:b31 .
+_:b15
+    <https://openehr.org#symbol>
+        _:b38 ;
+    <https://openehr.org#value>
+        "3"^^xsd:int .
 
-_:b32
-    <terminology_id> "local" ;
-    <code_string> "at36" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at2>
-    rdfs:label "Report ID"@en .
-
-_:b33
+_:b39
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -238,27 +264,40 @@ _:b33
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
-_:b34
-    <https://openehr.org#symbol>
-        _:b22 ;
-    <https://openehr.org#value>
-        "6"^^xsd:int .
+<http://niche.cs.dal.ca/ui_copd.n3#at43>
+    a   <https://openehr.org#POINT_EVENT> ;
+    rdfs:label "Point in time"@en ;
+    <https://openehr.org#nodeId>
+        "at43" ;
+    <https://openehr.org#attribute>
+        <http://niche.cs.dal.ca/ui_copd.n3#at43.data> ;
+    <https://openehr.org#occurrences>
+        _:b1 .
 
-_:b35
-    <https://openehr.org#symbol>
-        _:b36 ;
-    <https://openehr.org#value>
-        "9"^^xsd:int .
-
-_:b37
+_:b40
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at2>
+    rdfs:label "Report ID"@en .
+
+_:b41
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#openEHR-EHR-COMPOSITION.report.v1>
     <https://openehr.org#definition>
@@ -273,7 +312,17 @@ _:b37
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at149> .
 
-_:b38
+_:b42
+    <https://openehr.org#lower>
+        "0.0"^^xsd:double ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "200.0"^^xsd:double .
+
+_:b43
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -285,76 +334,28 @@ _:b38
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
-_:b39
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
-_:b40
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
-_:b41
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
-_:b42
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at90>
     rdfs:label "Extension"@en .
-
-_:b43
-    <https://openehr.org#lower>
-        "1"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
 
 _:b44
     <https://openehr.org#lower>
         "0"^^xsd:int ;
-    <https://openehr.org#list>
-        "true"^^xsd:boolean ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
-    <https://openehr.org#ordered>
+    <https://openehr.org#bag>
         "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
+_:b38
+    <terminology_id> "local" ;
+    <code_string> "at15" .
+
 <http://niche.cs.dal.ca/ui_copd.n3#at120>
     a   <https://openehr.org#ELEMENT> ;
-    rdfs:label "Rate"@en ;
+    rdfs:label "Respiration rate"@en ;
     <https://openehr.org#nodeId>
         "at120" ;
     <https://openehr.org#attribute>
@@ -365,31 +366,11 @@ _:b44
 <http://niche.cs.dal.ca/ui_copd.n3#at241>
     rdfs:label "Protocol"@en .
 
-_:b46
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at41.data>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at42> .
-
-_:b47
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at10>
     rdfs:label "ItemTree"@en .
@@ -402,13 +383,33 @@ _:b47
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at59.data> ;
     <https://openehr.org#occurrences>
-        _:b48 .
+        _:b46 .
+
+_:b47
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
+
+_:b48
+    <https://openehr.org#lower>
+        "0.0"^^xsd:double ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1000.0"^^xsd:double .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at205.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b49 ;
+        _:b8 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at206> .
 
@@ -418,18 +419,50 @@ _:b47
 <http://niche.cs.dal.ca/ui_copd.n3#at47>
     rdfs:label "ItemTree"@en .
 
-_:b50
-    <terminology_id> "local" ;
-    <code_string> "at15" .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at1>
     rdfs:label "Tree"@en .
 
-_:b51
+_:b49
+    <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
+_:b50
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at79.value>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at80> .
+
+_:b16
     <https://openehr.org#symbol>
-        _:b52 ;
+        _:b51 ;
     <https://openehr.org#value>
-        "0"^^xsd:int .
+        "4"^^xsd:int .
+
+_:b52
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
 _:b53
     <https://openehr.org#lower>
@@ -442,26 +475,12 @@ _:b53
         "1"^^xsd:int .
 
 _:b54
-    <terminology_id> "local" ;
-    <code_string> "at35" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at79.value>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at80> .
-
-_:b55
-    <https://openehr.org#symbol>
-        _:b56 ;
-    <https://openehr.org#value>
-        "2"^^xsd:int .
-
-_:b57
-    <https://openehr.org#symbol>
-        _:b58 ;
-    <https://openehr.org#value>
-        "4"^^xsd:int .
+    <https://openehr.org#units>
+        "%" ;
+    <https://openehr.org#precision>
+        "1"^^xsd:int ;
+    <https://openehr.org#magnitude>
+        _:b55 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at5.data>
     <https://openehr.org#existence>
@@ -471,6 +490,18 @@ _:b57
 
 <http://niche.cs.dal.ca/ui_copd.n3#at240>
     rdfs:label "Exertion"@en .
+
+_:b56
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at131>
     rdfs:label "Tree"@en .
@@ -483,7 +514,7 @@ _:b57
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at45.value> ;
     <https://openehr.org#occurrences>
-        _:b53 .
+        _:b57 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at115.data>
     <https://openehr.org#existence>
@@ -500,31 +531,11 @@ _:b57
 <http://niche.cs.dal.ca/ui_copd.n3#at167>
     rdfs:label "Extension"@en .
 
-_:b59
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at27.value>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#C_DV_ORDINAL>
-        ( _:b60 _:b61 _:b62 _:b63 _:b57 _:b64 _:b65 _:b66 _:b3 _:b67 _:b68 ) .
-
-_:b69
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
+        ( _:b58 _:b59 _:b60 _:b61 _:b62 _:b63 _:b64 _:b26 _:b34 _:b65 _:b66 ) .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at46>
     a   <https://openehr.org#C_DV_BOOLEAN> ;
@@ -544,16 +555,6 @@ _:b69
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at0.content> ;
     <https://openehr.org#occurrences>
-        "1"^^xsd:int .
-
-_:b70
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
         "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at58>
@@ -578,17 +579,7 @@ _:b70
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at60> .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at208>
-    a   <https://openehr.org#ELEMENT> ;
-    rdfs:label "SpO₂"@en ;
-    <https://openehr.org#nodeId>
-        "at208" ;
-    <https://openehr.org#attribute>
-        <http://niche.cs.dal.ca/ui_copd.n3#at208.value> ;
-    <https://openehr.org#occurrences>
-        _:b9 .
-
-_:b71
+_:b67
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -600,11 +591,18 @@ _:b71
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
-_:b72
-    <terminology_id> "local" ;
-    <code_string> "at65" .
+<http://niche.cs.dal.ca/ui_copd.n3#at208>
+    a   <https://openehr.org#ELEMENT> ;
+    rdfs:label "SpO₂"@en ;
+    <https://openehr.org#nodeId>
+        "at208" ;
+    <https://openehr.org#attribute>
+        <http://niche.cs.dal.ca/ui_copd.n3#at208.value> ;
+    <https://openehr.org#occurrences>
+        _:b50 .
 
-_:b6  <https://openehr.org#lower>
+_:b36
+    <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
@@ -615,13 +613,15 @@ _:b6  <https://openehr.org#lower>
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
-_:b73
-    <terminology_id> "local" ;
-    <code_string> "at14" .
-
-_:b74
-    <terminology_id> "local" ;
-    <code_string> "at31" .
+_:b68
+    <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at80>
     a   <https://openehr.org#C_DV_BOOLEAN> ;
@@ -646,17 +646,7 @@ _:b74
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at147> .
 
-_:b75
-    <https://openehr.org#lower>
-        "1"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b76
+_:b55
     <https://openehr.org#lower>
         "0.0"^^xsd:double ;
     <https://openehr.org#upperIncluded>
@@ -664,9 +654,33 @@ _:b76
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
     <https://openehr.org#upper>
-        "1000.0"^^xsd:double .
+        "100.0"^^xsd:double .
 
-_:b77
+_:b69
+    <terminology_id> "local" ;
+    <code_string> "at33" .
+
+_:b13
+    <https://openehr.org#symbol>
+        _:b70 ;
+    <https://openehr.org#value>
+        "1"^^xsd:int .
+
+_:b71
+    <terminology_id> "local" ;
+    <code_string> "at20" .
+
+_:b72
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
+
+_:b73
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -692,7 +706,7 @@ _:b77
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at49.data> ;
     <https://openehr.org#occurrences>
-        _:b78 .
+        _:b74 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at102>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -721,54 +735,9 @@ _:b77
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at25.data> ;
     <https://openehr.org#occurrences>
-        _:b79 .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at7>
-    a   <https://openehr.org#POINT_EVENT> ;
-    rdfs:label "Point in time"@en ;
-    <https://openehr.org#nodeId>
-        "at7" ;
-    <https://openehr.org#attribute>
-        <http://niche.cs.dal.ca/ui_copd.n3#at7.data> ;
-    <https://openehr.org#occurrences>
         _:b75 .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at114>
-    rdfs:label "Extension"@en .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at126>
-    rdfs:label "List"@en .
-
-_:b14
-    <https://openehr.org#symbol>
-        _:b50 ;
-    <https://openehr.org#value>
-        "3"^^xsd:int .
-
-_:b2  <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b80
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b81
+_:b76
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -778,35 +747,77 @@ _:b81
     <https://openehr.org#upper>
         "1"^^xsd:int .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at42.events>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#cardinality>
-        _:b82 ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at43> .
+<http://niche.cs.dal.ca/ui_copd.n3#at7>
+    a   <https://openehr.org#POINT_EVENT> ;
+    rdfs:label "Point in time"@en ;
+    <https://openehr.org#nodeId>
+        "at7" ;
+    <https://openehr.org#attribute>
+        <http://niche.cs.dal.ca/ui_copd.n3#at7.data> ;
+    <https://openehr.org#occurrences>
+        _:b77 .
 
-_:b13
-    <https://openehr.org#symbol>
-        _:b73 ;
-    <https://openehr.org#value>
-        "2"^^xsd:int .
+<http://niche.cs.dal.ca/ui_copd.n3#at114>
+    rdfs:label "Extension"@en .
 
-_:b83
+_:b78
     <https://openehr.org#lower>
-        "1"^^xsd:int ;
+        "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at126>
+    rdfs:label "List"@en .
+
+_:b79
+    <https://openehr.org#symbol>
+        _:b80 ;
+    <https://openehr.org#value>
+        "9"^^xsd:int .
+
+_:b11
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
+
+_:b81
+    <terminology_id> "local" ;
+    <code_string> "at32" .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at42.events>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#cardinality>
+        _:b73 ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at43> .
+
+_:b82
+    <https://openehr.org#symbol>
+        _:b83 ;
+    <https://openehr.org#value>
+        "5"^^xsd:int .
+
+_:b84
+    <terminology_id> "local" ;
+    <code_string> "at36" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at84.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b84 ;
+        _:b85 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at85> .
 
@@ -814,7 +825,7 @@ _:b83
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b85 ;
+        _:b40 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at25> .
 
@@ -826,31 +837,29 @@ _:b83
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at91.data> ;
     <https://openehr.org#occurrences>
-        _:b42 .
+        _:b47 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at232.value>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#C_DV_QUANTITY>
-        ( _:b86 ) .
+        ( _:b30 ) .
 
-_:b87
+_:b86
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
+        "true"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
     <https://openehr.org#upper>
-        "false"^^xsd:boolean .
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at44.items>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b88 ;
+        _:b44 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at45> .
 
@@ -869,9 +878,15 @@ _:b87
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at86> .
 
-_:b89
-    <terminology_id> "local" ;
-    <code_string> "at67" .
+_:b87
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at23>
     a   <https://openehr.org#OBSERVATION> ;
@@ -881,23 +896,23 @@ _:b89
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at23.data> ;
     <https://openehr.org#occurrences>
-        _:b90 .
+        _:b88 .
 
-_:b65
-    <https://openehr.org#symbol>
-        _:b32 ;
-    <https://openehr.org#value>
-        "6"^^xsd:int .
-
-_:b91
+_:b89
     <https://openehr.org#lower>
-        "1"^^xsd:int ;
+        "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
+
+_:b35
+    <terminology_id> "local" ;
+    <code_string> "at38" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at48>
     rdfs:label "Extension"@en .
@@ -910,7 +925,13 @@ _:b91
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at101.data> ;
     <https://openehr.org#occurrences>
-        _:b92 .
+        _:b90 .
+
+_:b14
+    <https://openehr.org#symbol>
+        _:b29 ;
+    <https://openehr.org#value>
+        "2"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at103.value>
     <https://openehr.org#existence>
@@ -933,10 +954,6 @@ _:b91
         <http://niche.cs.dal.ca/ui_copd.n3#at24.events> ;
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
-
-_:b93
-    <terminology_id> "local" ;
-    <code_string> "at16" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at6>
     a   <https://openehr.org#HISTORY> ;
@@ -964,15 +981,15 @@ _:b93
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at78> .
 
-_:b94
+_:b91
     <https://openehr.org#lower>
-        "1"^^xsd:int ;
+        "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
+        "true"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
     <https://openehr.org#upper>
-        "false"^^xsd:boolean .
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at196.data>
     <https://openehr.org#existence>
@@ -986,25 +1003,33 @@ _:b94
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at58> .
 
+_:b92
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
+
+_:b77
+    <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
 <http://niche.cs.dal.ca/ui_copd.n3#at206.data>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at207> .
 
-_:b95
-    <https://openehr.org#symbol>
-        _:b96 ;
-    <https://openehr.org#value>
-        "4"^^xsd:int .
-
-_:b68
-    <https://openehr.org#symbol>
-        _:b97 ;
-    <https://openehr.org#value>
-        "10"^^xsd:int .
-
-_:b24
+_:b93
     <https://openehr.org#lower>
         "1"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -1016,37 +1041,39 @@ _:b24
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
+_:b63
+    <https://openehr.org#symbol>
+        _:b7 ;
+    <https://openehr.org#value>
+        "5"^^xsd:int .
+
 <http://niche.cs.dal.ca/ui_copd.n3#at108.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b98 ;
+        _:b94 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at109> .
 
-_:b99
-    <terminology_id> "local" ;
-    <code_string> "at30" .
-
-_:b100
-    <terminology_id> "local" ;
-    <code_string> "at13" .
+_:b25
+    <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at147.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b101 ;
+        _:b95 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at148> .
-
-_:b102
-    <https://openehr.org#units>
-        "/min" ;
-    <https://openehr.org#precision>
-        "0"^^xsd:int ;
-    <https://openehr.org#magnitude>
-        _:b76 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at82>
     rdfs:label "Extension"@en .
@@ -1061,6 +1088,10 @@ _:b102
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
+_:b83
+    <terminology_id> "local" ;
+    <code_string> "at69" .
+
 <http://niche.cs.dal.ca/ui_copd.n3#at101.data>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
@@ -1071,10 +1102,7 @@ _:b102
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#C_DV_ORDINAL>
-        ( _:b51 _:b103 _:b55 _:b104 _:b95 _:b105 _:b34 _:b26 _:b106 _:b35 _:b107 ) .
-
-_:b8  <terminology_id> "local" ;
-    <code_string> "at12" .
+        ( _:b96 _:b97 _:b98 _:b99 _:b100 _:b82 _:b101 _:b102 _:b3 _:b79 _:b103 ) .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at112>
     a   <https://openehr.org#C_DV_BOOLEAN> ;
@@ -1082,24 +1110,6 @@ _:b8  <terminology_id> "local" ;
         "at112" ;
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
-
-_:b88
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b66
-    <https://openehr.org#symbol>
-        _:b108 ;
-    <https://openehr.org#value>
-        "7"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at245>
     rdfs:label "Extension"@en .
@@ -1112,9 +1122,9 @@ _:b66
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at27.value> ;
     <https://openehr.org#occurrences>
-        _:b109 .
+        _:b104 .
 
-_:b110
+_:b105
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -1136,21 +1146,23 @@ _:b110
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b111
-    <terminology_id> "local" ;
-    <code_string> "at32" .
-
-_:b112
+_:b46
     <https://openehr.org#lower>
         "1"^^xsd:int ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
+
+_:b106
+    <terminology_id> "local" ;
+    <code_string> "at19" .
+
+_:b70
+    <terminology_id> "local" ;
+    <code_string> "at13" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at5>
     a   <https://openehr.org#OBSERVATION> ;
@@ -1160,7 +1172,7 @@ _:b112
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at5.data> ;
     <https://openehr.org#occurrences>
-        _:b41 .
+        _:b107 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at148>
     a   <https://openehr.org#EVENT> ;
@@ -1170,7 +1182,7 @@ _:b112
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at148.data> ;
     <https://openehr.org#occurrences>
-        _:b113 .
+        _:b108 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at0.name.DV_TEXT>
     a   <https://openehr.org#DV_TEXT> ;
@@ -1179,58 +1191,54 @@ _:b112
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b114
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at231.items>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b112 ;
+        _:b93 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at232> .
-
-_:b84
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b78
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at199.items>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b115 ;
+        _:b109 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at200> .
 
+_:b110
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
 <http://niche.cs.dal.ca/ui_copd.n3#at81>
     rdfs:label "ItemTree"@en .
+
+_:b59
+    <https://openehr.org#symbol>
+        _:b10 ;
+    <https://openehr.org#value>
+        "1"^^xsd:int .
+
+_:b111
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at93>
     a   <https://openehr.org#POINT_EVENT> ;
@@ -1240,17 +1248,17 @@ _:b78
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at93.data> ;
     <https://openehr.org#occurrences>
-        _:b83 .
+        _:b112 .
 
-_:b17
-    <https://openehr.org#symbol>
-        _:b116 ;
-    <https://openehr.org#value>
-        "6"^^xsd:int .
-
-_:b116
-    <terminology_id> "local" ;
-    <code_string> "at18" .
+_:b113
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at244>
     rdfs:label "Device"@en .
@@ -1272,7 +1280,7 @@ _:b116
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#C_DV_QUANTITY>
-        ( _:b117 ) .
+        ( _:b114 ) .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at111>
     a   <https://openehr.org#ELEMENT> ;
@@ -1282,7 +1290,7 @@ _:b116
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at111.value> ;
     <https://openehr.org#occurrences>
-        _:b69 .
+        _:b41 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at232>
     a   <https://openehr.org#ELEMENT> ;
@@ -1294,21 +1302,21 @@ _:b116
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b118
-    <terminology_id> "local" ;
-    <code_string> "at21" .
-
-_:b61
-    <https://openehr.org#symbol>
-        _:b74 ;
-    <https://openehr.org#value>
-        "1"^^xsd:int .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at198.data>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at199> .
+
+_:b115
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at4>
     rdfs:label "Extension"@en .
@@ -1323,61 +1331,7 @@ _:b61
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b52
-    <terminology_id> "local" ;
-    <code_string> "at64" .
-
-_:b36
-    <terminology_id> "local" ;
-    <code_string> "at73" .
-
-_:b119
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
-_:b120
-    <terminology_id> "local" ;
-    <code_string> "at33" .
-
-_:b121
-    <https://openehr.org#units>
-        "%" ;
-    <https://openehr.org#precision>
-        "1"^^xsd:int ;
-    <https://openehr.org#magnitude>
-        _:b122 .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at52.items>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#cardinality>
-        _:b33 ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at53> .
-
-_:b123
-    <https://openehr.org#lower>
-        "0.0"^^xsd:double ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "100.0"^^xsd:double .
-
-_:b60
-    <https://openehr.org#symbol>
-        _:b99 ;
-    <https://openehr.org#value>
-        "0"^^xsd:int .
-
-_:b124
+_:b116
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -1389,27 +1343,60 @@ _:b124
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
-_:b106
-    <https://openehr.org#symbol>
-        _:b5 ;
-    <https://openehr.org#value>
-        "8"^^xsd:int .
+_:b117
+    <terminology_id> "local" ;
+    <code_string> "at39" .
 
-_:b63
-    <https://openehr.org#symbol>
-        _:b120 ;
-    <https://openehr.org#value>
-        "3"^^xsd:int .
+_:b9  <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
-_:b31
+<http://niche.cs.dal.ca/ui_copd.n3#at52.items>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#cardinality>
+        _:b89 ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at53> .
+
+_:b101
+    <https://openehr.org#symbol>
+        _:b118 ;
+    <https://openehr.org#value>
+        "6"^^xsd:int .
+
+_:b97
+    <https://openehr.org#symbol>
+        _:b28 ;
+    <https://openehr.org#value>
+        "1"^^xsd:int .
+
+_:b119
     <https://openehr.org#lower>
         "1"^^xsd:int ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
+
+_:b88
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at84>
     a   <https://openehr.org#HISTORY> ;
@@ -1434,13 +1421,16 @@ _:b31
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b86
-    <https://openehr.org#units>
-        "Cel" ;
-    <https://openehr.org#precision>
-        "1"^^xsd:int ;
-    <https://openehr.org#magnitude>
-        _:b123 .
+_:b6  <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at60>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -1452,60 +1442,18 @@ _:b86
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b109
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
-_:b125
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
-_:b122
-    <https://openehr.org#lower>
-        "0.0"^^xsd:double ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "100.0"^^xsd:double .
-
-_:b107
+_:b96
     <https://openehr.org#symbol>
-        _:b126 ;
+        _:b120 ;
     <https://openehr.org#value>
-        "10"^^xsd:int .
+        "0"^^xsd:int .
 
-_:b62
-    <https://openehr.org#symbol>
-        _:b111 ;
-    <https://openehr.org#value>
-        "2"^^xsd:int .
-
-_:b27
-    <terminology_id> "local" ;
-    <code_string> "at71" .
-
-_:b127
+_:b121
     <https://openehr.org#lower>
-        "0"^^xsd:int ;
+        "1"^^xsd:int ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
         "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
@@ -1524,43 +1472,37 @@ _:b127
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at198.data> ;
     <https://openehr.org#occurrences>
-        _:b28 .
+        _:b121 .
+
+_:b102
+    <https://openehr.org#symbol>
+        _:b122 ;
+    <https://openehr.org#value>
+        "7"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at207.items>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b114 ;
+        _:b123 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at208> .
-
-_:b128
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at106>
     rdfs:label "Extension"@en .
 
-_:b92
+<http://niche.cs.dal.ca/ui_copd.n3#at29>
+    rdfs:label "Extension"@en .
+
+_:b74
     <https://openehr.org#lower>
-        "1"^^xsd:int ;
+        "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
+        "true"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
     <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at29>
-    rdfs:label "Extension"@en .
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at203>
     rdfs:label "Extension"@en .
@@ -1590,11 +1532,21 @@ _:b92
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at24> .
 
-_:b19
+_:b90
+    <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
+_:b62
     <https://openehr.org#symbol>
-        _:b129 ;
+        _:b124 ;
     <https://openehr.org#value>
-        "8"^^xsd:int .
+        "4"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at83.data>
     <https://openehr.org#existence>
@@ -1602,7 +1554,13 @@ _:b19
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at84> .
 
-_:b130
+_:b65
+    <https://openehr.org#symbol>
+        _:b117 ;
+    <https://openehr.org#value>
+        "9"^^xsd:int .
+
+_:b125
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -1620,19 +1578,7 @@ _:b130
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at95.value> ;
     <https://openehr.org#occurrences>
-        _:b40 .
-
-_:b29
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
+        _:b72 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at83>
     a   <https://openehr.org#OBSERVATION> ;
@@ -1642,7 +1588,18 @@ _:b29
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at83.data> ;
     <https://openehr.org#occurrences>
-        _:b47 .
+        _:b126 .
+
+_:b2  <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at197>
     a   <https://openehr.org#HISTORY> ;
@@ -1654,14 +1611,120 @@ _:b29
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
+_:b20
+    <https://openehr.org#symbol>
+        _:b71 ;
+    <https://openehr.org#value>
+        "8"^^xsd:int .
+
 <http://niche.cs.dal.ca/ui_copd.n3#at161>
     rdfs:label "Exertion"@en .
 
-_:b15
+_:b95
+    <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at91.data>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at92> .
+
+_:b98
     <https://openehr.org#symbol>
-        _:b93 ;
+        _:b127 ;
     <https://openehr.org#value>
-        "4"^^xsd:int .
+        "2"^^xsd:int .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at49.data>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at50> .
+
+_:b85
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at0.content>
+    <https://openehr.org#objects>
+        ( <http://niche.cs.dal.ca/ui_copd.n3#at5> <http://niche.cs.dal.ca/ui_copd.n3#at23> <http://niche.cs.dal.ca/ui_copd.n3#at41> <http://niche.cs.dal.ca/ui_copd.n3#at49> <http://niche.cs.dal.ca/ui_copd.n3#at57> <http://niche.cs.dal.ca/ui_copd.n3#at75> <http://niche.cs.dal.ca/ui_copd.n3#at83> <http://niche.cs.dal.ca/ui_copd.n3#at91> <http://niche.cs.dal.ca/ui_copd.n3#at99> <http://niche.cs.dal.ca/ui_copd.n3#at107> <http://niche.cs.dal.ca/ui_copd.n3#at115> <http://niche.cs.dal.ca/ui_copd.n3#at146> <http://niche.cs.dal.ca/ui_copd.n3#at196> <http://niche.cs.dal.ca/ui_copd.n3#at204> <http://niche.cs.dal.ca/ui_copd.n3#at228> ) ;
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#cardinality>
+        _:b24 .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at105>
+    rdfs:label "ItemTree"@en .
+
+_:b94
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at117>
+    a   <https://openehr.org#EVENT> ;
+    rdfs:label "Any event"@en ;
+    <https://openehr.org#nodeId>
+        "at117" ;
+    <https://openehr.org#attribute>
+        <http://niche.cs.dal.ca/ui_copd.n3#at117.data> ;
+    <https://openehr.org#occurrences>
+        _:b128 .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at28>
+    rdfs:label "ItemTree"@en .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at202>
+    rdfs:label "ItemTree"@en .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at129>
+    rdfs:label "Inspired oxygen"@en .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at149.items>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#cardinality>
+        _:b110 ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at151> .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at60.items>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#cardinality>
+        _:b129 ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at61> .
+
+_:b58
+    <https://openehr.org#symbol>
+        _:b130 ;
+    <https://openehr.org#value>
+        "0"^^xsd:int .
 
 _:b131
     <https://openehr.org#lower>
@@ -1673,144 +1736,36 @@ _:b131
     <https://openehr.org#upper>
         "1"^^xsd:int .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at91.data>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at92> .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at49.data>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at50> .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at0.content>
-    <https://openehr.org#objects>
-        ( <http://niche.cs.dal.ca/ui_copd.n3#at5> <http://niche.cs.dal.ca/ui_copd.n3#at23> <http://niche.cs.dal.ca/ui_copd.n3#at41> <http://niche.cs.dal.ca/ui_copd.n3#at49> <http://niche.cs.dal.ca/ui_copd.n3#at57> <http://niche.cs.dal.ca/ui_copd.n3#at75> <http://niche.cs.dal.ca/ui_copd.n3#at83> <http://niche.cs.dal.ca/ui_copd.n3#at91> <http://niche.cs.dal.ca/ui_copd.n3#at99> <http://niche.cs.dal.ca/ui_copd.n3#at107> <http://niche.cs.dal.ca/ui_copd.n3#at115> <http://niche.cs.dal.ca/ui_copd.n3#at146> <http://niche.cs.dal.ca/ui_copd.n3#at196> <http://niche.cs.dal.ca/ui_copd.n3#at204> <http://niche.cs.dal.ca/ui_copd.n3#at228> ) ;
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#cardinality>
-        _:b44 .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at105>
-    rdfs:label "ItemTree"@en .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at117>
-    a   <https://openehr.org#EVENT> ;
-    rdfs:label "Any event"@en ;
-    <https://openehr.org#nodeId>
-        "at117" ;
-    <https://openehr.org#attribute>
-        <http://niche.cs.dal.ca/ui_copd.n3#at117.data> ;
-    <https://openehr.org#occurrences>
-        _:b37 .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at28>
-    rdfs:label "ItemTree"@en .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at202>
-    rdfs:label "ItemTree"@en .
-
-_:b30
+_:b31
     <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b97
-    <terminology_id> "local" ;
-    <code_string> "at40" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at129>
-    rdfs:label "Inspired oxygen"@en .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at149.items>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#cardinality>
-        _:b77 ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at151> .
-
-_:b113
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at60.items>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#cardinality>
-        _:b71 ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at61> .
-
-_:b117
-    <https://openehr.org#units>
-        "/min" ;
-    <https://openehr.org#precision>
-        "0"^^xsd:int ;
-    <https://openehr.org#magnitude>
-        _:b132 .
-
-_:b133
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
+        "0.0"^^xsd:double ;
     <https://openehr.org#upperIncluded>
         "true"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
     <https://openehr.org#upper>
-        "1"^^xsd:int .
+        "100.0"^^xsd:double .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at151.value>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#C_DV_QUANTITY>
-        ( _:b102 ) .
+        ( _:b132 ) .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at100.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b87 ;
+        _:b67 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at101> .
 
-_:b134
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
+_:b133
+    <terminology_id> "local" ;
+    <code_string> "at12" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at62>
     rdfs:label "ItemTree"@en .
-
-_:b135
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at50>
     a   <https://openehr.org#HISTORY> ;
@@ -1826,21 +1781,9 @@ _:b135
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b124 ;
+        _:b78 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at103> .
-
-_:b98
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at196>
     a   <https://openehr.org#OBSERVATION> ;
@@ -1850,19 +1793,7 @@ _:b98
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at196.data> ;
     <https://openehr.org#occurrences>
-        _:b136 .
-
-_:b82
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
+        _:b87 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at86>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -1890,29 +1821,11 @@ _:b82
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b101
-    <https://openehr.org#lower>
-        "1"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b49
-    <https://openehr.org#lower>
-        "1"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
+_:b17
+    <https://openehr.org#symbol>
+        _:b134 ;
+    <https://openehr.org#value>
+        "5"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at116>
     a   <https://openehr.org#HISTORY> ;
@@ -1922,6 +1835,26 @@ _:b49
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at116.events> ;
     <https://openehr.org#occurrences>
+        "1"^^xsd:int .
+
+_:b108
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
+_:b135
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
         "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at213>
@@ -1934,10 +1867,6 @@ _:b49
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b137
-    <terminology_id> "local" ;
-    <code_string> "at69" .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at9>
     a   <https://openehr.org#ELEMENT> ;
     rdfs:label "Is your cough, wheezing or stridor less, the same or worse than usual?"@en ;
@@ -1946,7 +1875,17 @@ _:b137
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at9.value> ;
     <https://openehr.org#occurrences>
-        _:b70 .
+        _:b136 .
+
+_:b137
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at0.name>
     <https://openehr.org#existence>
@@ -1954,9 +1893,15 @@ _:b137
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at0.name.DV_TEXT> .
 
-_:b96
+_:b103
+    <https://openehr.org#symbol>
+        _:b33 ;
+    <https://openehr.org#value>
+        "10"^^xsd:int .
+
+_:b27
     <terminology_id> "local" ;
-    <code_string> "at68" .
+    <code_string> "at37" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at230.data>
     <https://openehr.org#existence>
@@ -1970,29 +1915,7 @@ _:b96
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at76> .
 
-_:b138
-    <terminology_id> "local" ;
-    <code_string> "at39" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at85>
-    a   <https://openehr.org#POINT_EVENT> ;
-    rdfs:label "Point in time"@en ;
-    <https://openehr.org#nodeId>
-        "at85" ;
-    <https://openehr.org#attribute>
-        <http://niche.cs.dal.ca/ui_copd.n3#at85.data> ;
-    <https://openehr.org#occurrences>
-        _:b139 .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at94.items>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#cardinality>
-        _:b135 ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at95> .
-
-_:b48
+_:b112
     <https://openehr.org#lower>
         "1"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -2002,42 +1925,7 @@ _:b48
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at61>
-    a   <https://openehr.org#ELEMENT> ;
-    rdfs:label "Please rate your exertion level when performing activities."@en ;
-    <https://openehr.org#nodeId>
-        "at61" ;
-    <https://openehr.org#attribute>
-        <http://niche.cs.dal.ca/ui_copd.n3#at61.value> ;
-    <https://openehr.org#occurrences>
-        _:b130 .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at109.data>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at110> .
-
-_:b140
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b108
-    <terminology_id> "local" ;
-    <code_string> "at37" .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at97>
-    rdfs:label "ItemTree"@en .
-
-_:b10
+_:b138
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -2046,6 +1934,73 @@ _:b10
         "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "1"^^xsd:int .
+
+_:b99
+    <https://openehr.org#symbol>
+        _:b139 ;
+    <https://openehr.org#value>
+        "3"^^xsd:int .
+
+_:b75
+    <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
+_:b114
+    <https://openehr.org#units>
+        "/min" ;
+    <https://openehr.org#precision>
+        "0"^^xsd:int ;
+    <https://openehr.org#magnitude>
+        _:b42 .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at85>
+    a   <https://openehr.org#POINT_EVENT> ;
+    rdfs:label "Point in time"@en ;
+    <https://openehr.org#nodeId>
+        "at85" ;
+    <https://openehr.org#attribute>
+        <http://niche.cs.dal.ca/ui_copd.n3#at85.data> ;
+    <https://openehr.org#occurrences>
+        _:b140 .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at94.items>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#cardinality>
+        _:b56 ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at95> .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at61>
+    a   <https://openehr.org#ELEMENT> ;
+    rdfs:label "Please rate your exertion level when performing activities."@en ;
+    <https://openehr.org#nodeId>
+        "at61" ;
+    <https://openehr.org#attribute>
+        <http://niche.cs.dal.ca/ui_copd.n3#at61.value> ;
+    <https://openehr.org#occurrences>
+        _:b53 .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at109.data>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at110> .
+
+_:b19
+    <https://openehr.org#symbol>
+        _:b106 ;
+    <https://openehr.org#value>
+        "7"^^xsd:int .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at97>
+    rdfs:label "ItemTree"@en .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at200>
     a   <https://openehr.org#ELEMENT> ;
@@ -2055,20 +2010,10 @@ _:b10
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at200.value> ;
     <https://openehr.org#occurrences>
-        _:b141 .
+        _:b125 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at212>
     rdfs:label "Waveform"@en .
-
-_:b11
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at103>
     a   <https://openehr.org#ELEMENT> ;
@@ -2078,10 +2023,13 @@ _:b11
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at103.value> ;
     <https://openehr.org#occurrences>
-        _:b131 .
+        _:b141 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at224>
     rdfs:label "Extension"@en .
+
+_:b4  <terminology_id> "local" ;
+    <code_string> "at72" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at115>
     a   <https://openehr.org#OBSERVATION> ;
@@ -2091,7 +2039,15 @@ _:b11
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at115.data> ;
     <https://openehr.org#occurrences>
-        _:b142 .
+        _:b76 .
+
+_:b132
+    <https://openehr.org#units>
+        "/min" ;
+    <https://openehr.org#precision>
+        "0"^^xsd:int ;
+    <https://openehr.org#magnitude>
+        _:b48 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at8>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -2107,59 +2063,29 @@ _:b11
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b143 ;
+        _:b119 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at230> .
 
-_:b142
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
+_:b134
+    <terminology_id> "local" ;
+    <code_string> "at17" .
 
-_:b143
-    <https://openehr.org#lower>
-        "1"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b144
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
-_:b85
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#bag>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b20
+_:b64
     <https://openehr.org#symbol>
-        _:b118 ;
+        _:b84 ;
     <https://openehr.org#value>
-        "9"^^xsd:int .
+        "6"^^xsd:int .
+
+_:b128
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at52>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -2195,24 +2121,34 @@ _:b20
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at166>
-    rdfs:label "Device"@en .
+_:b32
+    <terminology_id> "local" ;
+    <code_string> "at22" .
 
-_:b45
+_:b142
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
+        "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
     <https://openehr.org#upper>
-        "1"^^xsd:int .
+        "false"^^xsd:boolean .
+
+_:b23
+    <terminology_id> "local" ;
+    <code_string> "at21" .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at166>
+    rdfs:label "Device"@en .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at197.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b80 ;
+        _:b39 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at198> .
 
@@ -2222,15 +2158,31 @@ _:b45
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at201> .
 
-_:b12
-    <https://openehr.org#symbol>
-        _:b100 ;
-    <https://openehr.org#value>
-        "1"^^xsd:int .
+_:b129
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
-_:b58
+_:b127
     <terminology_id> "local" ;
-    <code_string> "at34" .
+    <code_string> "at66" .
+
+_:b143
+    <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at207>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -2248,26 +2200,27 @@ _:b58
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at88> .
 
+_:b144
+    <terminology_id> "local" ;
+    <code_string> "at68" .
+
 _:b145
-    <terminology_id> "local" ;
-    <code_string> "at17" .
-
-_:b4  <terminology_id> "local" ;
-    <code_string> "at38" .
-
-_:b126
-    <terminology_id> "local" ;
-    <code_string> "at74" .
-
-_:b136
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
+        "false"^^xsd:boolean ;
     <https://openehr.org#lowerIncluded>
         "true"^^xsd:boolean ;
+    <https://openehr.org#bag>
+        "true"^^xsd:boolean ;
     <https://openehr.org#upper>
-        "1"^^xsd:int .
+        "false"^^xsd:boolean .
+
+_:b66
+    <https://openehr.org#symbol>
+        _:b146 ;
+    <https://openehr.org#value>
+        "10"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at51>
     a   <https://openehr.org#POINT_EVENT> ;
@@ -2277,22 +2230,28 @@ _:b136
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at51.data> ;
     <https://openehr.org#occurrences>
-        _:b43 .
-
-_:b56
-    <terminology_id> "local" ;
-    <code_string> "at66" .
+        _:b143 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at63>
     rdfs:label "Extension"@en .
+
+_:b60
+    <https://openehr.org#symbol>
+        _:b81 ;
+    <https://openehr.org#value>
+        "2"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at86.items>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b140 ;
+        _:b145 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at87> .
+
+_:b130
+    <terminology_id> "local" ;
+    <code_string> "at30" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at99>
     a   <https://openehr.org#OBSERVATION> ;
@@ -2302,7 +2261,7 @@ _:b56
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at99.data> ;
     <https://openehr.org#occurrences>
-        _:b146 .
+        _:b52 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at75>
     a   <https://openehr.org#OBSERVATION> ;
@@ -2312,7 +2271,7 @@ _:b56
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at75.data> ;
     <https://openehr.org#occurrences>
-        _:b134 .
+        _:b135 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at87>
     a   <https://openehr.org#ELEMENT> ;
@@ -2322,7 +2281,23 @@ _:b56
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at87.value> ;
     <https://openehr.org#occurrences>
-        _:b125 .
+        _:b138 .
+
+_:b140
+    <https://openehr.org#lower>
+        "1"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
+_:b18
+    <https://openehr.org#symbol>
+        _:b147 ;
+    <https://openehr.org#value>
+        "6"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at109>
     a   <https://openehr.org#POINT_EVENT> ;
@@ -2332,7 +2307,7 @@ _:b56
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at109.data> ;
     <https://openehr.org#occurrences>
-        _:b94 .
+        _:b49 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at206>
     a   <https://openehr.org#EVENT> ;
@@ -2342,40 +2317,31 @@ _:b56
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at206.data> ;
     <https://openehr.org#occurrences>
-        _:b59 .
+        _:b148 .
 
-_:b141
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
+_:b61
+    <https://openehr.org#symbol>
+        _:b69 ;
+    <https://openehr.org#value>
+        "3"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at8.items>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b23 ;
+        _:b43 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at9> .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at218>
     rdfs:label "Inspired oxygen"@en .
 
-_:b139
-    <https://openehr.org#lower>
-        "1"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
+_:b146
+    <terminology_id> "local" ;
+    <code_string> "at40" .
 
-_:b1  <https://openehr.org#lower>
+_:b109
+    <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
         "false"^^xsd:boolean ;
@@ -2385,30 +2351,36 @@ _:b1  <https://openehr.org#lower>
         "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
+
+_:b37
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
+
+_:b100
+    <https://openehr.org#symbol>
+        _:b144 ;
+    <https://openehr.org#value>
+        "4"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at92.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b110 ;
+        _:b105 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at93> .
 
 _:b147
     <terminology_id> "local" ;
-    <code_string> "at22" .
+    <code_string> "at18" .
 
-_:b132
-    <https://openehr.org#lower>
-        "0.0"^^xsd:double ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "200.0"^^xsd:double .
-
-_:b115
+_:b149
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -2419,28 +2391,6 @@ _:b115
         "true"^^xsd:boolean ;
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
-
-_:b79
-    <https://openehr.org#lower>
-        "1"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "false"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "false"^^xsd:boolean .
-
-_:b64
-    <https://openehr.org#symbol>
-        _:b54 ;
-    <https://openehr.org#value>
-        "5"^^xsd:int .
-
-_:b103
-    <https://openehr.org#symbol>
-        _:b72 ;
-    <https://openehr.org#value>
-        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at78>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -2451,12 +2401,6 @@ _:b103
         <http://niche.cs.dal.ca/ui_copd.n3#at78.items> ;
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
-
-_:b16
-    <https://openehr.org#symbol>
-        _:b145 ;
-    <https://openehr.org#value>
-        "5"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at42>
     a   <https://openehr.org#HISTORY> ;
@@ -2479,7 +2423,7 @@ _:b16
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b127 ;
+        _:b142 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at7> .
 
@@ -2491,7 +2435,17 @@ _:b16
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at79.value> ;
     <https://openehr.org#occurrences>
-        _:b81 .
+        _:b92 .
+
+_:b45
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at205>
     a   <https://openehr.org#HISTORY> ;
@@ -2503,21 +2457,11 @@ _:b16
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b146
-    <https://openehr.org#lower>
-        "0"^^xsd:int ;
-    <https://openehr.org#upperIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#lowerIncluded>
-        "true"^^xsd:boolean ;
-    <https://openehr.org#upper>
-        "1"^^xsd:int .
-
 <http://niche.cs.dal.ca/ui_copd.n3#at58.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b148 ;
+        _:b149 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at59> .
 
@@ -2544,31 +2488,15 @@ _:b146
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-_:b105
-    <https://openehr.org#symbol>
-        _:b137 ;
-    <https://openehr.org#value>
-        "5"^^xsd:int .
+_:b139
+    <terminology_id> "local" ;
+    <code_string> "at67" .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at7.data>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at8> .
+_:b122
+    <terminology_id> "local" ;
+    <code_string> "at71" .
 
-_:b18
-    <https://openehr.org#symbol>
-        _:b149 ;
-    <https://openehr.org#value>
-        "7"^^xsd:int .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at95.value>
-    <https://openehr.org#existence>
-        <https://openehr.org#OPTIONAL> ;
-    <https://openehr.org#object>
-        <http://niche.cs.dal.ca/ui_copd.n3#at96> .
-
-_:b148
+_:b123
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -2580,6 +2508,42 @@ _:b148
     <https://openehr.org#upper>
         "false"^^xsd:boolean .
 
+<http://niche.cs.dal.ca/ui_copd.n3#at7.data>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at8> .
+
+_:b80
+    <terminology_id> "local" ;
+    <code_string> "at73" .
+
+_:b126
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at95.value>
+    <https://openehr.org#existence>
+        <https://openehr.org#OPTIONAL> ;
+    <https://openehr.org#object>
+        <http://niche.cs.dal.ca/ui_copd.n3#at96> .
+
+_:b107
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
+
 <http://niche.cs.dal.ca/ui_copd.n3#at41>
     a   <https://openehr.org#OBSERVATION> ;
     rdfs:label "Color of Sputum"@en ;
@@ -2588,13 +2552,33 @@ _:b148
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at41.data> ;
     <https://openehr.org#occurrences>
-        _:b144 .
+        _:b131 .
+
+_:b148
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "false"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "false"^^xsd:boolean .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at208.value>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#C_DV_QUANTITY>
-        ( _:b121 ) .
+        ( _:b54 ) .
+
+_:b141
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at163>
     rdfs:label "List"@en .
@@ -2607,13 +2591,7 @@ _:b148
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at77.data> ;
     <https://openehr.org#occurrences>
-        _:b91 .
-
-_:b67
-    <https://openehr.org#symbol>
-        _:b138 ;
-    <https://openehr.org#value>
-        "9"^^xsd:int .
+        _:b68 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at89>
     rdfs:label "ItemTree"@en .
@@ -2626,23 +2604,25 @@ _:b67
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at53.value> ;
     <https://openehr.org#occurrences>
-        _:b46 .
+        _:b115 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at151>
     a   <https://openehr.org#ELEMENT> ;
-    rdfs:label "Rate"@en ;
+    rdfs:label "Pulse rate"@en ;
     <https://openehr.org#nodeId>
         "at151" ;
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at151.value> ;
     <https://openehr.org#occurrences>
-        _:b39 .
+        _:b86 .
 
-_:b104
-    <https://openehr.org#symbol>
-        _:b89 ;
-    <https://openehr.org#value>
-        "3"^^xsd:int .
+_:b118
+    <terminology_id> "local" ;
+    <code_string> "at70" .
+
+_:b124
+    <terminology_id> "local" ;
+    <code_string> "at34" .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at199>
     a   <https://openehr.org#ITEM_TREE> ;
@@ -2654,24 +2634,7 @@ _:b104
     <https://openehr.org#occurrences>
         "1"^^xsd:int .
 
-<http://niche.cs.dal.ca/ui_copd.n3#at204>
-    a   <https://openehr.org#OBSERVATION> ;
-    rdfs:label "Pulse oximetry"@en ;
-    <https://openehr.org#nodeId>
-        "at204" ;
-    <https://openehr.org#attribute>
-        <http://niche.cs.dal.ca/ui_copd.n3#at204.data> ;
-    <https://openehr.org#occurrences>
-        _:b25 .
-
-<http://niche.cs.dal.ca/ui_copd.n3#at216>
-    rdfs:label "Tree"@en .
-
-_:b149
-    <terminology_id> "local" ;
-    <code_string> "at19" .
-
-_:b90
+_:b104
     <https://openehr.org#lower>
         "0"^^xsd:int ;
     <https://openehr.org#upperIncluded>
@@ -2681,31 +2644,54 @@ _:b90
     <https://openehr.org#upper>
         "1"^^xsd:int .
 
-_:b129
+_:b120
     <terminology_id> "local" ;
-    <code_string> "at20" .
+    <code_string> "at64" .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at204>
+    a   <https://openehr.org#OBSERVATION> ;
+    rdfs:label "Pulse oximetry"@en ;
+    <https://openehr.org#nodeId>
+        "at204" ;
+    <https://openehr.org#attribute>
+        <http://niche.cs.dal.ca/ui_copd.n3#at204.data> ;
+    <https://openehr.org#occurrences>
+        _:b113 .
+
+_:b136
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .
+
+<http://niche.cs.dal.ca/ui_copd.n3#at216>
+    rdfs:label "Tree"@en .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at78.items>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b128 ;
+        _:b116 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at79> .
-
-_:b21
-    <https://openehr.org#symbol>
-        _:b147 ;
-    <https://openehr.org#value>
-        "10"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at50.events>
     <https://openehr.org#existence>
         <https://openehr.org#OPTIONAL> ;
     <https://openehr.org#cardinality>
-        _:b38 ;
+        _:b111 ;
     <https://openehr.org#object>
         <http://niche.cs.dal.ca/ui_copd.n3#at51> .
+
+_:b12
+    <https://openehr.org#symbol>
+        _:b133 ;
+    <https://openehr.org#value>
+        "0"^^xsd:int .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at107>
     a   <https://openehr.org#OBSERVATION> ;
@@ -2715,7 +2701,7 @@ _:b21
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at107.data> ;
     <https://openehr.org#occurrences>
-        _:b119 .
+        _:b137 .
 
 <http://niche.cs.dal.ca/ui_copd.n3#at228>
     a   <https://openehr.org#OBSERVATION> ;
@@ -2725,4 +2711,18 @@ _:b21
     <https://openehr.org#attribute>
         <http://niche.cs.dal.ca/ui_copd.n3#at228.data> ;
     <https://openehr.org#occurrences>
-        _:b133 .
+        _:b91 .
+
+_:b51
+    <terminology_id> "local" ;
+    <code_string> "at16" .
+
+_:b57
+    <https://openehr.org#lower>
+        "0"^^xsd:int ;
+    <https://openehr.org#upperIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#lowerIncluded>
+        "true"^^xsd:boolean ;
+    <https://openehr.org#upper>
+        "1"^^xsd:int .

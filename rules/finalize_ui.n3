@@ -31,6 +31,30 @@
 #} => { ?premise => { ?target tpl:combined ?gens } } .
 
 
+{	?el tpl:generated ?gen .
+
+	?container ?property ?el .
+	?property!log:uri string:notMatches tpl:!log:uri .
+
+} => { ?container tpl:generated ?gen } .
+
+
+{	?container ?property ?list .
+	?list log:rawType log:List .
+	?property!log:uri string:notMatches tpl:!log:uri .
+
+	(?gen
+	{	?list list:member ?el . 
+		?el tpl:generated ?gen .
+		 
+	} ?gens) log:collectAllIn _:x . 
+	
+	?gens list:length ?len .
+	?len math:greaterThan 0 .
+	#?list!list:length math:equalTo ?len .
+
+} => { ?container tpl:combined ?gens } .
+
 {	?tpl a tpl:UiTemplate ;
 	tpl:container [
 		tpl:select [ rdf:value ?select ] ;
