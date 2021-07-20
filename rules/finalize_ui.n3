@@ -71,4 +71,4 @@
 		
 	) log:conjunction ?premise .
 
-} => { ?premise => { 0 log:outputString ?output ; :eh ?target } } .
+} => { ?premise => { 0 log:outputString ?output } } .

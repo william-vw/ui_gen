@@ -53,10 +53,10 @@ _:b0 a tpl:UiElement ; tpl:level 0 ;
 	tpl:elements ( :ui-val_quant1 :ui-val_quant2 :ui-val_quant3 ) .
 	
 :ui-val_quant1 a tpl:UiElement ; tpl:hidden true ; tpl:inputType xsd:anyURI ;
-	fhir:Observation.Quantity.system :s .
+	fhir:Quantity.system :s .
 	
 :ui-val_quant2 a tpl:UiElement ; tpl:hidden true ; tpl:inputType xsd:string ; 
-	fhir:Observation.Quantity.code :c .
+	fhir:Quantity.code :c .
 	
 :ui-val_quant3 a tpl:UiElement ; tpl:inputType xsd:numeric ; 
-	fhir:Observation.Quantity.value :v .
+	fhir:Quantity.value :v .
