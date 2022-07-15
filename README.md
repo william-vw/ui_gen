@@ -11,3 +11,7 @@ The `ehr/[spec]/out/[format]` subfolders contain the intermediary and final file
 To try out the generated HTML+RDFa UI files, clone the repository and open the HTML file (called `ui.html`) in the browser. After filling out some values and clicking submit, the generated RDF code should appear in the developer console.
 
 Trying out the generated Yail files is currently a bit more involved - one has to generate an appropriate .zip archive and upload it as an external project to a [Punya instance](punya.appinventor.mit.edu/). Future work involves making this process easier.
+
+When referring to this work, please use the following citation:
+
+> Van Woensel, W., Abidi, S., Abidi, S.S.R.: Towards Model-Driven Semantic Interfaces for Electronic Health Records on Multiple Platforms Using Notation3. In: Stefanidis, K., Rao, P., Kondylakis, H., and Troullinou, G. (eds.) Proceedings of the Fourth International Workshop on Semantic Web Meets Health Data Management, SWH 2021 co-located with the 20th International Semantic Web Conference, ISWC 2021, Virtual Conference, October 24, 2021. pp. 41–52. CEUR-WS.org (2021).
